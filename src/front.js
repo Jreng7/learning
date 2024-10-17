@@ -1,15 +1,15 @@
-import { Readable, Writable, Transform } from 'node:stream'
+import { Readable } from 'node:stream'
 
 class One extends Readable {
-  
+
   num = 1
-  
-  _read(){
+
+  _read() {
 
     const i = this.num++
 
     setTimeout(() => {
-      if(i > 7){
+      if (i > 7) {
         this.push(null)
       } else {
         const buf = Buffer.from(i.toString())
@@ -19,17 +19,8 @@ class One extends Readable {
   }
 }
 
-class OneNegative extends Transform {
-  _transform(chunk, encoding, callback){
-    const data = Number(chunk.toString()) * -1
-    callback(null, data.toString())
-  }
-}
-
-class OneTen extends Writable {
-  
-}
-
-new One()
-  .pipe(new OneNegative())
-  .pipe(new OneTen())
+fetch('localhost:3335', {
+  method: 'POST',
+  body: new One(),
+  duplex: 'half'
+})
