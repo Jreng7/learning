@@ -19,7 +19,7 @@ class One extends Readable {
   }
 }
 
-fetch('localhost:3335', {
+fetch('localhost:8081', {
   method: 'POST',
   body: new One(),
   duplex: 'half'
