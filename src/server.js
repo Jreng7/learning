@@ -3,18 +3,22 @@ import http from 'node:http'
 const users = []
 
 const server = http.createServer(async(req, res) => {
-
+  
   const { method, url } = req
-
+  
   const buffers = [] // Banco de dados.
 
   for await (const chunk of req) {
     buffers.push(chunk)
   }
 
-  const body = JSON.parse(Buffer.concat(buffers).toString())
-  // Inserindo os dados que foram armazenados no banco de dados (buffers) 
-  // OBS: Armazenados em memória. E colocados no BODY 
+  try {
+    req.body = JSON.parse(Buffer.concat(buffers).toString())
+    // Inserindo os dados que foram armazenados no banco de dados (buffers) 
+    // OBS: Armazenados em memória. E colocados no BODY 
+  } catch {
+    req.body = null
+  }
 
   if(method === 'POST' && url === '/user') {
 
@@ -31,7 +35,7 @@ const server = http.createServer(async(req, res) => {
   } else if(method === 'GET' && url === '/list'){
     return res
       .setHeader('Content-type', 'aplication/json')
-      .end(JSON.stringify(contentBody))
+      .end(JSON.stringify(users))
   }
 
   return res.writeHead(404).end('Not Found')
