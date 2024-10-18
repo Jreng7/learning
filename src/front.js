@@ -19,8 +19,12 @@ class One extends Readable {
   }
 }
 
-fetch('localhost:8081', {
+fetch('http://localhost:8081', {
   method: 'POST',
   body: new One(),
   duplex: 'half'
+}).then((response) => {
+  return response.text()
+}).then((data) => {
+  console.log(data)
 })

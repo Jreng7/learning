@@ -1,20 +1,19 @@
 import http from 'node:http'
-import { Transform } from 'node:stream'
 
-class OneNegative extends Transform {
-  _transform(chunk, encoding, callback) {
-    const info = Number(chunk.toString()) * -1
+const server = http.createServer(async(req, res) => {
 
-    console.log(info)
+  const buffers = []
 
-    callback(null, info.toString())
+  for await (const data of req) {
+    buffers.push(data)
   }
-}
 
-const server = http.createServer((req, res) => {
+  const contentBody = Buffer.concat(buffers).toString()
 
-  return req.pipe(new OneNegative()).pipe(res)
+  console.log(contentBody)
 
+  return res.end(contentBody)
+  
 })
 
 server.listen(8081)
