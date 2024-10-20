@@ -1,16 +1,23 @@
-# Meu Repositório de Projetos Diversos
+# Projeto - Aplicação de Agendamento de Consultas Médicas
 
-Este projeto faz parte de um repositório de projetos individuais, onde cada pasta representa um projeto diferente, desenvolvido em linguagens e tecnologias variadas.
+Este projeto faz parte de um repositório de projetos individuais e está relacionado ao vídeo do canal **Dev Point** no YouTube. O vídeo pode ser acessado através deste [link](https://www.youtube.com/watch?v=YWSYkbRwzFI).
 
-## Estrutura do Repositório
+## Sobre o Projeto
 
-- **video_01**: Projeto 1 - Breve descrição do projeto. (Substitua por informações específicas)
+Durante a **Jornada JS**, vamos desenvolver uma aplicação completa para **agendamento de consultas médicas**. A aplicação será dividida em três partes principais:
 
-Cada pasta contém um projeto independente, e cada projeto pode abordar diferentes objetivos de aprendizado e uso de tecnologias diversas.
+- **Mobile (React Native)**: Uma interface amigável para os pacientes agendarem consultas via dispositivos móveis.
+- **Web (React)**: Uma plataforma web para os profissionais de saúde e pacientes gerenciarem os agendamentos.
+- **API (Node.js)**: Uma API robusta que servirá como o backend da aplicação, responsável por gerenciar dados e lógica de negócio.
 
-### Como Navegar
+## Tecnologias Utilizadas
 
-1. Acesse a pasta correspondente ao projeto desejado.
-2. Cada pasta terá seu próprio `README.md` com mais detalhes sobre o projeto específico, incluindo instruções de uso e as tecnologias envolvidas.
+- **React Native**: Para o desenvolvimento da interface mobile.
+- **React**: Para a aplicação web.
+- **Node.js**: Para construir a API que integrará os sistemas mobile e web.
 
-Explore os projetos e acompanhe o progresso!
+## Como Acessar o Conteúdo
+
+Este projeto é baseado no vídeo do canal **Dev Point** e serve como uma base de aprendizado para o desenvolvimento de uma aplicação full stack. Acompanhe o vídeo para mais detalhes e implementações práticas.
+
+Explore o projeto e acompanhe o desenvolvimento dessa solução durante a Jornada JS!
