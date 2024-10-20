@@ -1,12 +1,12 @@
 import http from 'node:http'
 
-const users = []
+const users = [] // Banco de Dados com os usuários.
 
 const server = http.createServer(async(req, res) => {
   
   const { method, url } = req
   
-  const buffers = [] // Banco de dados.
+  const buffers = [] // Vai receber a req
 
   for await (const chunk of req) {
     buffers.push(chunk)
