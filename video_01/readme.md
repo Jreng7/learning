@@ -10,7 +10,7 @@ Durante a **Jornada JS**, vamos desenvolver uma aplicação completa para **agen
 - **Web (React)**: Uma plataforma web para os profissionais de saúde e pacientes gerenciarem os agendamentos.
 - **API (Node.js)**: Uma API robusta que servirá como o backend da aplicação, responsável por gerenciar dados e lógica de negócio.
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas.
 
 - **React Native**: Para o desenvolvimento da interface mobile.
 - **React**: Para a aplicação web.
