@@ -9,7 +9,9 @@ function imc () {
   const peso = document.getElementById('peso')
   const resultado = document.getElementById('resultado')
 
-  
+  if (nome !== '') {
+    resultado
+  }
 
 }
 
