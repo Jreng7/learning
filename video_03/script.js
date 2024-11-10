@@ -10,7 +10,11 @@ function imc () {
   const resultado = document.getElementById('resultado')
 
   if (nome !== '' && altura !== '' && peso !== '') {
+
     const valorImc = ( peso / (altura * altura))
+
+    resultado.textContent = valorIMC;
+
   } else {
     resultado.textContent = 'Preencha todos os campos.'
   }
