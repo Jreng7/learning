@@ -16,13 +16,15 @@ function imc () {
 
     let classificacao = '';
 
-    if (valorIMC <)
+    if (valorIMC < 18.5){
+      classificacao = 'Abaixo do peso';
+    }
 
 
 
 
     // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
-    resultado.textContent = valorIMC;
+    resultado.textContent = ``;
 
   } else {
     resultado.textContent = 'Preencha todos os campos.'
