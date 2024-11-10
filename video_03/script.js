@@ -24,7 +24,7 @@ function imc () {
 
 
     // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
-    resultado.textContent = `${nome} seu IMC é ${valorIMC}`;
+    resultado.textContent = `${nome} seu IMC é ${valorIMC} e você está ${classificacao}`;
 
   } else {
     resultado.textContent = 'Preencha todos os campos.'
