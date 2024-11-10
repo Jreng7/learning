@@ -11,7 +11,7 @@ function imc () {
 
   if (nome !== '' && altura !== '' && peso !== '') {
 
-    const valorImc = ( peso / (altura * altura)).toFixed(2);
+    const valorIMC = ( peso / (altura * altura)).toFixed(2);
 
     resultado.textContent = valorIMC;
 
