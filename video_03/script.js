@@ -11,9 +11,15 @@ function imc () {
 
   if (nome !== '' && altura !== '' && peso !== '') {
 
+    // Calcula o valor IMC com base no peso e altura fornecidos.
     const valorIMC = ( peso / (altura * altura)).toFixed(2);
 
     let classificacao = '';
+
+    if (valorIMC <)
+
+
+
 
     resultado.textContent = valorIMC;
 
