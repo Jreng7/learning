@@ -21,6 +21,7 @@ function imc () {
 
 
 
+    // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
     resultado.textContent = valorIMC;
 
   } else {
