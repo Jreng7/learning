@@ -13,6 +13,8 @@ function imc () {
 
     const valorIMC = ( peso / (altura * altura)).toFixed(2);
 
+    let classificacao = '';
+
     resultado.textContent = valorIMC;
 
   } else {
