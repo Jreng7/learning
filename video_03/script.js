@@ -18,10 +18,9 @@ function imc () {
 
     if (valorIMC < 18.5){
       classificacao = 'Abaixo do peso';
+    } else if {
+      
     }
-
-
-
 
     // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
     resultado.textContent = `${nome} seu IMC é ${valorIMC} e você está ${classificacao}`;
