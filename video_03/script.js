@@ -26,6 +26,8 @@ function imc () {
       classificacao = 'com obesidade grau 1'
     } else if (valorIMC < 40) {
       classificacao = 'com obesidade grau 2'
+    } else {
+      classificacao = ''
     }
 
     // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
