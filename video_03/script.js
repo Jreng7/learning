@@ -21,7 +21,7 @@ function imc () {
     } else if (valorIMC < 25){
       classificacao = 'com peso ideal. Parabéns, continue assim.'
     } else if (valorIMC < 30) {
-      classificacao = ''
+      classificacao = 'levemente acima do peso'
     }
 
     // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
