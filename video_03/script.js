@@ -23,11 +23,11 @@ function imc () {
     } else if (valorIMC < 30) {
       classificacao = 'levemente acima do peso.';
     } else if (valorIMC < 35) {
-      classificacao = 'Você está com obesidade grau 1'
+      classificacao = 'Você está com obesidade grau I'
     } else if (valorIMC < 40) {
-      classificacao = 'com obesidade grau 2'
+      classificacao = 'Você está com obesidade grau II'
     } else {
-      classificacao = 'Obesidade grau 3. Cuidado!'
+      classificacao = 'Obesidade grau III. Cuidado!'
     }
 
     // Resultado imprime na tela o valor do IMC através de .textContent =! de .value
