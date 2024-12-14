@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+</head>
+<body>
+
+  <h1>Página de Formulário</h1>
+  <h2>Área de Cadastro</h2>
+
+  <form action="login.html" method="get">
+    <!-- 
+    Quando um formulário é submetido, o par nome do campo (name) e valor preenchido pelo usuário é enviado ao servidor.
+
+    atributo "name" dentro do input serve para identificar
+    não só o nome do input, mas quando o cliente enviar o valor
+    estará atrelado a ele, exemplo, user=joaquim (É como se o user
+    fosse uma "variável" para armazenar o valor do input)
+
+    value="" já é o "placeholder preenchido" logo, é redundante colocar os dois.
+
+    Diferenças entre placeholder e value:
+
+  ** placeholder:
+  
+  É um texto de instrução que aparece no campo quando ele está vazio.
+  Desaparece assim que o usuário começa a digitar.
+  Não é enviado junto com os dados do formulário (não tem valor funcional, apenas visual).
+
+  **value:
+
+  Define o valor inicial do campo. (também nomeia)
+  no caso de "<input type="submit" value="Enviar">" o nome
+  do botão será "Enviar"
+  Permanece no campo até ser alterado pelo usuário.
+  É enviado no formulário se não for alterado pelo usuário.
+    -->
+    <input type="text" name="user" value="preenchido" placeholder="Entre com seu usuário">
+    <input type="submit" value="Enviar">
+  </form>
+
+
+  <!-- Por padrão o atributo "selected" dentro da tag option
+   faz com que aquele option seja o default do select.
+
+   caso queira deixar a primeira opção em branco é só fazer
+
+   <option></option> Sem conteúdo.
+
+  -->
+  <h2>Área de Login</h2>
+  <form action="">
+    <label for="dropdown">Escolha uma opção:</label>
+    <select name="organizacao" id="dropdown">
+      <option value="masculino">Branco</option>
+      <option value="masculino">Azul</option>
+      <option value="masculino" selected>Verde</option>
+    </select>
+  </form>
+</body>
+</html>
