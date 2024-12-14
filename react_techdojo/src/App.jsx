@@ -1,10 +1,10 @@
 // importações
 /* CSS - Componentes - Bibliotecas e Funções */
 import React from 'react';
+import Navbar from './components/Navbar';
 
 
 const App = () => {
-
 /** 
  * 
  *  ÁREA ANTES DO RETURN dentro de "const App" ou export default App () => {}"
@@ -23,6 +23,7 @@ const App = () => {
   return (
     // Aqui dentro do return é área do JSX = (JavaScript XML) (tags html "bombada")
     <div className='App'>
+      <Navbar />
       <h1>Curso React | TecDojo</h1>
       <p>
         Curso completo na plataforma Tech Dojo, foi cedido 30 dias para
