@@ -10,6 +10,7 @@
 
 
 // Com Switch Case
+// SWITCH CASE Geralmente é usando quando sabemos os valores (As opções) a serem tratadas.
 const turno = prompt("Digite o turno atual: ")
 
 switch(turno.toLowerCase()){  // Switch fica "vigiando" a variável turno e transforma o valor recebido em letras minúsculas.
