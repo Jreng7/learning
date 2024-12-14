@@ -1,7 +1,5 @@
 // importações
 /* CSS - Componentes - Bibliotecas e Funções */
-
-import './App.css';
 import React from 'react';
 
 
@@ -22,11 +20,29 @@ const App = () => {
  * 
  */
 
-  return (  
+  return (
     // Aqui dentro do return é área do JSX = (JavaScript XML) (tags html "bombada")
-    <div>
-      <h1>Olá</h1>
-      <p>Comecei o curso de React</p>
+    <div className='App'>
+      <h1>Curso React | TecDojo</h1>
+      <p>
+        Curso completo na plataforma Tech Dojo, foi cedido 30 dias para
+        experimentar a plataform e enviar um feedback.
+      </p>
+      <h3>Tabela</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th> {/* th = table header. Cabeçalho da tabela. */}
+            <th>Idade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>João</td> {/* td = table data ou seja, dados da tabela. */}
+            <td>Idade</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
