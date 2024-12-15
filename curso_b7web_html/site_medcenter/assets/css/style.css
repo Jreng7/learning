@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 990px;
+  background-color: rgb(95, 63, 22);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  
+}
