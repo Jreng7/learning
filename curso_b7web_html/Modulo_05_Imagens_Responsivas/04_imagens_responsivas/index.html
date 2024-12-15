@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagens Responsivas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <picture>
+
+    <!-- 
+    Tag "source" quando tem o atribudo "media" e o valor "min-width" 
+    é feito a troca de imagem, PORÉM, o valor "min-width" está
+    se referindo ao tamanho minimo da TELA !!! No exemplo abaixo
+    quando a tela chega em 500 é trocado de imagem! 
+
+    Logo, consigo trocar a imagem baseado com o tamanho da tela.
+    -->
+
+    <source media="(min-width: 750px)" srcset="java1.jpg">
+    <source media="(min-width: 500px)" srcset="java2.jpg">
+    <img src="java1.jpg" alt="imagem java">
+
+  </picture>
+
+</body>
+</html>

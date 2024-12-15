@@ -1,0 +1,43 @@
+body {
+  background-color: black;
+  color: #c1c1c1;
+}
+
+/*
+
+@media indica que o código dentro será modificado de acordo
+com o css passado, logo, como vemos no exemplo, quando a tela 
+excede, ou seja, ultrapassa os 700px de largura, ela muda para preto.
+
+Ou vice-versa, quando a tela diminui para menos de 700
+a @media entra em ação e aplica o css que foi definido dentro do bloco.
+
+*/
+@media (max-width: 500px) { 
+  body {
+    background-color: #c1c1c1;
+    color: rgb(7, 18, 27);
+  }
+}
+
+
+/*
+  Funciona quase da mesma forma do max-width, porém, o css 
+  só irá funcionar com telas acima de 1000px. 
+*/
+@media (min-width: 1000px) {
+  body {
+    background-color: blueviolet;
+  }
+}
+
+
+/*
+  Aqui significa que funcionará entre o intervalo
+  com o tamanho de tela entre 650 a 800
+*/
+@media (min-width: 650px) and (max-width: 800px) {
+  body {
+    background-color: rgb(5, 59, 29);
+  }
+}
