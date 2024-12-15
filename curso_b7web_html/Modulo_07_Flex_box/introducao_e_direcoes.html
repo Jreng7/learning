@@ -5,20 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flexbox</title>
 
-  <style>
-    div {
-      width: 200px;
-      height: 200px;
-      background: #f1a1a1;
-      border: solid 1px #070707;
-      margin: 10px;
-      float: left
+  <style type="text/css">
+
+    .container {
+      display: flex;
+      background: #000;
     }
+
+    .container div {
+      background-color: rgb(172, 111, 38);
+      margin: 10px;
+      padding: 10px;
+    }
+
   </style>
 
 </head>
 <body>
-  <div></div>
-  <div></div>
+
+  <div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+ 
+
 </body>
 </html>
