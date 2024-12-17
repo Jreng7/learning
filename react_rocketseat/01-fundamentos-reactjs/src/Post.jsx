@@ -1,7 +1,13 @@
 // props: { author: "Joaquim" }
 
 export function Post(props){
-  return <h1>{props}</h1>
+  return (
+    <div> 
+      <h1>{props.nome}</h1>
+      <h2>{props.algumaCoisa}</h2>
+    </div>
+
+  )
 }
 
 /*  
