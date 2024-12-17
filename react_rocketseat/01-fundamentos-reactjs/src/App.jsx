@@ -1,10 +1,13 @@
+// JSX = JavaScript + XML
+
+import Post from './Post'
+
 function App() {
  
   return (
-    <>
-      <h1>Olá</h1>
-    </>
+    <Post />
   )
 }
 
 export default App
+
