@@ -4,7 +4,7 @@ export function Post(props){
   return (
     <div> 
       <h1>{props.nome}</h1>
-      <h2>{props.algumaCoisa}</h2>
+      <h3>{props.algumaCoisa}</h3>
     </div>
 
   )
