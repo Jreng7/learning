@@ -1,6 +1,7 @@
 import { Header } from './components/Header'
 import { Post } from './components/Post'
 import { Sidebar } from './components/Sidebar'
+import { Comment } from './components/Comment'
 
 
 import styles  from './App.module.css'
@@ -22,6 +23,8 @@ export function App() {
         </main>
         
       </div>
+
+      <Comment />
     </>
   
   )
