@@ -23,8 +23,6 @@ export function App() {
         </main>
         
       </div>
-
-      <Comment />
     </>
   
   )
