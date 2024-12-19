@@ -1,17 +1,15 @@
 import styles from './Sidebar.module.css'
-import retanguloVerde from '../assets/retanguloVerde.png'
-import imagePerfil from '../assets/img-perfil.svg'
 import { PencilLine } from 'phosphor-react'
 
 export function Sidebar(){
   return (
     <aside className={styles.sidebar}>
-      <img src={retanguloVerde} className={styles.cover}/>
+      <img src="https://tm.ibxk.com.br/2023/07/26/26110031907090.jpeg?ims=1280x480" className={styles.cover}/>
 
       <div className={styles.profile}>
 
-        <img className={styles.avatar} src={imagePerfil} alt="imagem de perfil" />
-        <strong>Joana Silva</strong>
+        <img className={styles.avatar} src="https://github.com/Jreng7.png"/>
+        <strong>Josué R S Jacinto</strong>
         <span>Web Developer</span>
         
       </div>
