@@ -8,9 +8,11 @@ export function Sidebar(){
       <img src={retanguloVerde} className={styles.cover}/>
 
       <div className={styles.profile}>
-        <img src={imagePerfil} alt="imagem de perfil" />
+
+        <img className={styles.avatar} src={imagePerfil} alt="imagem de perfil" />
         <strong>Joana Silva</strong>
         <span>Web Developer</span>
+        
       </div>
 
       <footer>
