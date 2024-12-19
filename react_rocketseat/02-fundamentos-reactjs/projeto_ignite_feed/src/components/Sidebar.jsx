@@ -1,6 +1,7 @@
 import styles from './Sidebar.module.css'
 import retanguloVerde from '../assets/retanguloVerde.png'
 import imagePerfil from '../assets/img-perfil.svg'
+import { PencilLine } from 'phosphor-react'
 
 export function Sidebar(){
   return (
@@ -17,6 +18,7 @@ export function Sidebar(){
 
       <footer>
         <a href="#">
+          <PencilLine size={20}/>
           Editar seu perfil
         </a>
       </footer>
