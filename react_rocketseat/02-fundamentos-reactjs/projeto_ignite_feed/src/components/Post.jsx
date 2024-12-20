@@ -1,36 +1,80 @@
 import styles from './Post.module.css'
 import { Comment } from './Comment'
 import { Avatar } from './Avatar'
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+import { useState } from 'react'
 
-export function Post(props){
+
+
+export function Post({ author, publishedAt, content }) {
+
+  const [comments, setComments] = useState([
+    'Post muito bacana, hein?!'
+  ])
+
+
+  const [newCommentText, setNewCommentText] = useState('')
+
+
+  const publishedDate = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR
+  })
+
+  const publishedDateRelative = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  })
+  
+
+  function handleCreateNewComment(e){
+    e.preventDefault()
+    
+    setComments([...comments, newCommentText])
+    setNewCommentText('')
+  }
+
+  function handleNewCommentChange(){
+    setNewCommentText(event.target.value)
+  }
+
+
+ // Acima ficam definidas as funções, regras de negócio e variáveis de estado do componente.
   return (
     <article className={styles.post}>
-
       <header>
         <div className={styles.author}>
-          <Avatar src="https://github.com/Jreng7.png"/>
+          <Avatar src={author.avatarUrl}/>
           <div className={styles.authorInfo}>
-            <strong>Josué R S Jacinto</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
-        <time title="11 de Maio às 08:13h" dateTime='2021-03-12 08:52:01'>
-          publicado há 1h
+        <time title={publishedDate} dateTime={publishedAt.toISOString()}>
+          {publishedDateRelative}
         </time>
       </header>
 
       <div className={styles.postContent}>
-       <p>Fala galeraa 👋</p>
-       <p>Acabei de subir mais um projeto no meu portfólio. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-       <p>👉 {' ' } <a href="">josue.design/doctorcare</a></p>
-       <p><a href="">#novoprojeto #nlw #rocketseat</a></p>
-      </div>
+        {content.map((linha) => {
+          if(linha.type === 'paragraph'){
+            return <p>{linha.content}</p>
+          } else if (linha.type === 'link'){
+            return <p><a href="#">{linha.content}</a></p>
+          }
+        })}
+      </div>  
 
-      <form className={styles.commentForm}>
+      <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea placeholder='Deixe seu comentário'/>
+        <textarea 
+          placeholder='Deixe seu comentário' 
+          value={newCommentText}
+          name="valorDigitado"
+          onChange={handleNewCommentChange}
+          />
 
         <footer>
           <button type='submit'>Publicar</button>
@@ -38,8 +82,9 @@ export function Post(props){
       </form>
 
       <div className={styles.commentList}>
-        <Comment author="Josué" text="Muito bom, parabéns!" time="2h atrás" />
-        <Comment author="João" text="Muito bom, parabéns!" time="2h atrás" />
+        {comments.map(comment => {
+          return <Comment content={comment}/>
+        })}
       </div>
     </article>
   )
