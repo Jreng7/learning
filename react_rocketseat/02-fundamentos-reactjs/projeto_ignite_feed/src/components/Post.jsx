@@ -44,6 +44,11 @@ export function Post({ author, publishedAt, content }) {
     setComments(commentsWithoutDeleted)
   }
 
+  function handleNewCommentInvalid(event){
+    
+  }
+
+
 
  // Acima ficam definidas as funções, regras de negócio e variáveis de estado do componente.
   return (
@@ -80,7 +85,7 @@ export function Post({ author, publishedAt, content }) {
           value={newCommentText}
           name="valorDigitado"
           onChange={handleNewCommentChange}
-          onInvalid={}
+          onInvalid={handleNewCommentInvalid}
           required
           />
 
