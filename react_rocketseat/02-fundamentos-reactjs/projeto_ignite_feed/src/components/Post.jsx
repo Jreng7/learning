@@ -80,6 +80,7 @@ export function Post({ author, publishedAt, content }) {
           value={newCommentText}
           name="valorDigitado"
           onChange={handleNewCommentChange}
+          onInvalid={}
           required
           />
 
