@@ -38,6 +38,12 @@ export function Post({ author, publishedAt, content }) {
     setNewCommentText(event.target.value)
   }
 
+  function deleteComment(commentToDelete){
+    const commentsWithoutDeleted = comments.filter(comentario => comentario !== commentToDelete)
+
+    setComments(commentsWithoutDeleted)
+  }
+
 
  // Acima ficam definidas as funções, regras de negócio e variáveis de estado do componente.
   return (
@@ -83,8 +89,13 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map(comment => {
-          return <Comment key={comment} content={comment}/>
-        })}
+          return (
+            <Comment 
+              key={comment}
+              content={comment} 
+              funcaoDeletarComentario={deleteComment}
+            />)
+      })}
       </div>
     </article>
   )
