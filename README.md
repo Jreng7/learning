@@ -17,6 +17,6 @@ To explore any project:
 2. Inside each folder, you will find a specific `README.md` file containing more details about the project, such as its functionalities, the technologies used, and execution instructions.
 
 ## **Additional Information**
-All courses related to these projects are free, with the exception of Rocketseat. However, I decided to include Rocketseat projects in this folder as well for convenience.
+All courses related to these projects are free, with the exception of Rocketseat and b7web. However, I decided to include Rocketseat projects in this folder as well for convenience.
 
 This repository serves as a space for learning and experimenting with different technologies and concepts.
