@@ -4,6 +4,7 @@
   "description": "I am currently taking the **RESTful API Development Course** on **Udemy**, taught by **Derci Santos**. In this course, I am learning how to build APIs to manage data for E-Commerce platforms, such as delivery apps, online sales systems, and more.",
   "main": "index.js",
   "scripts": {
+    "start": "npx tsc-watch --onSuccess \"node ./lib/index.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "@tsconfig/recommended": "^1.0.8",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.3",
+    "tsc-watch": "^6.2.1",
     "typescript": "^5.7.2"
   }
 }
