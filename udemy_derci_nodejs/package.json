@@ -1,0 +1,12 @@
+{
+  "name": "udemy_derci_nodejs",
+  "version": "1.0.0",
+  "description": "I am currently taking the **RESTful API Development Course** on **Udemy**, taught by **Derci Santos**. In this course, I am learning how to build APIs to manage data for E-Commerce platforms, such as delivery apps, online sales systems, and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
