@@ -1,6 +1,6 @@
 {
 "editor.scrollbar.horizontal": "hidden",
-"editor.fontFamily": "Firacode",
+"editor.fontFamily": "'Fira Code', monospace",
 "editor.parameterHints.enabled": false,
 "workbench.editor.labelFormat": "short",
 "javascript.updateImportsOnFileMove.enabled": "always",
@@ -20,10 +20,10 @@
 "git.enableSmartCommit": true,
 "editor.cursorBlinking": "smooth",
 "editor.cursorStyle": "line-thin",
-"editor.lineHeight": 24,
+"editor.lineHeight": 23,
 "editor.largeFileOptimizations": false,
 "editor.renderLineHighlight": "gutter", 
 "editor.tabSize": 2,
-"editor.rulers": [135, 149],
+"editor.rulers": [120, 135],
 }
 
