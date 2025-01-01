@@ -9,6 +9,7 @@ yarn-error.log*
 # Build
 dist/
 build/
+build
 
 # Arquivos de ambiente
 .env
