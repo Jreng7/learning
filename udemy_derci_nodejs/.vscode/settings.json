@@ -11,6 +11,7 @@
 "editor.minimap.enabled": false,
 "breadcrumbs.enabled": false,
 "editor.fontSize": 16,
+"editor.fontWeight": "normal",
 "explorer.compactFolders": false,
 "editor.fontLigatures": true,
 "editor.cursorSmoothCaretAnimation": "on",
