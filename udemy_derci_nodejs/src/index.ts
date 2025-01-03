@@ -9,14 +9,8 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 
-type User = {id: number, name: string, email: string};
-let id = 0;
-const users: User[] = [];
 
 
-app.get("/users", (req: Request, res: Response) => {
-  res.send(users);
-})
 
 app.get("/users/:id", (req: Request, res: Response) => {
   let userId = Number(req.params.id);
