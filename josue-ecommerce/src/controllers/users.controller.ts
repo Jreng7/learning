@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { getFirestore } from 'firebase-admin/firestore'
 
 type User = {
   id: number;
@@ -25,9 +26,10 @@ export class UsersController {
 
   // metodo post - inserir usuaŕios.
   static insertUser(req: Request, res: Response) {
+
     let user = req.body
-    user.id = ++id
-    users.push(user)
+    getFirestore().collection("users").add(user)
+
     res.send({message: "Usuário criado com sucesso!"})
   }
 
