@@ -1,65 +1,54 @@
 import express, { Request, Response } from 'express';
 
-const router = express.Router();
+export const userRoutes = express.Router();
 
 
 type User = {
-  
   id: number;
-  name: string; 
-  email: string;
-
+  nome: string;
+  email: string
 }
+
 
 let id = 0;
 const users: User[] = []
 
 
-
-router.get("/", (req: Request, res: Response) => {
-  res.send("Bem-vindo ao meu site! ok 2");
+userRoutes.get("/users", (req: Request, res: Response) => {
+  res.send(users)
 })
 
-
-// METODO GET
-router.get("/users", (req: Request, res: Response) => {
-  res.send(users);
+// Metodo get pega usuário
+userRoutes.get("/users/:id", (req: Request, res: Response) => {
+  let userId = Number(req.params.id)
+  let user = users.find((usuario: User) => usuario.id === userId)
+  res.send(user)
 })
 
-
-// METODO GET
-router.get("/users/:id", (req: Request, res: Response) => {
-  let userId = Number(req.params.id);
-  let user = users.find(item => item.id === userId)
-  res.send(user);
-})
-
-
-// METODO POST
-router.post("/users", (req: Request, res: Response) => {
-  let user = req.body;
-  user.id = ++id;
+// Metodo post
+userRoutes.post("/users", (req: Request, res: Response) => {
+  let user = req.body
+  user.id = ++id
   users.push(user)
-  res.send({ message: "usuário criado com sucesso." })
+  res.send({message: "Usuário criado com sucesso!"})
 })
 
-// METODO PUT
-router.put("/users/:id", (req: Request, res: Response) => {
-
-  let userId = Number(req.params.id);
-  let user = req.body;
-  let indexOf = users.findIndex((user: User) => user.id === userId);
-  users[indexOf].name = user.nameBody;
-  users[indexOf].email = user.emailBody;
-
-  res.send({messagem: "Usuário alterado com sucesso."})
-
+// Metodo put
+userRoutes.put("/users/:id", (req: Request, res: Response) => {
+  let userId = Number(req.params.id)
+  let user= req.body
+  let indexOf = users.findIndex((usuarioPercorrido: User) => usuarioPercorrido.id === userId)
+  users[indexOf].nome = user.nome
+  users[indexOf].email = user.email
+  res.send({message: "Usuário atualizado com sucesso."})
 })
 
-// METODO DELETE
-router.delete("/users/:id", (req: Request, res: Response) => {
-  let userId = Number(req.params.id);
-  let indexOf = users.findIndex((user: User) => user.id === userId);
-  users.splice(indexOf, 1);
-  res.send({message: "Usuário excluído com sucesso."})
+// delete
+userRoutes.delete("/users/:id", (req: Request, res: Response) => {
+  let userId = Number(req.params.id)
+  let user = req.body
+  users.splice(user, userId)
+  res.send({message: "Usuário deletado com sucesso."})
 })
+
+
