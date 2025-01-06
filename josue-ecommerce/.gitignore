@@ -12,6 +12,9 @@ yarn-error.log*
 dist/
 build/
 build
+lib/
+/lib
+lib
 
 # Arquivos de ambiente
 .env
