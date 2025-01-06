@@ -1,29 +1,15 @@
 import express, { Request, Response } from 'express';
+import { UsersController } from '../controllers/users.controller' 
 
 export const userRoutes = express.Router();
 
 
-type User = {
-  id: number;
-  nome: string;
-  email: string
-}
+
+userRoutes.get("/users", UsersController.getAllUsers)
 
 
-let id = 0;
-const users: User[] = []
-
-
-userRoutes.get("/users", (req: Request, res: Response) => {
-  res.send(users)
-})
-
-// Metodo get pega usuário
-userRoutes.get("/users/:id", (req: Request, res: Response) => {
-  let userId = Number(req.params.id)
-  let user = users.find((usuario: User) => usuario.id === userId)
-  res.send(user)
-})
+// Metodo get pega usuário por 
+userRoutes.get("/users/:id", UsersController.getUserById)
 
 // Metodo post
 userRoutes.post("/users", (req: Request, res: Response) => {
