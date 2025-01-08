@@ -1,5 +1,6 @@
 'use client';
 
+import ButtonChatOnline from "../components/ButtonChatOnline";
 import { Fragment } from "react";
 
 export default function Example(){
@@ -11,7 +12,9 @@ export default function Example(){
 
   return (
     <Fragment>
-      <button onClick={alertar}>Enviar</button>
+      <ButtonChatOnline>
+        
+      </ButtonChatOnline>
     </Fragment>
   )
 }
