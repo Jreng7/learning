@@ -11,7 +11,7 @@ export default function Example(){
 
   return (
     <Fragment>
-      <button onClick={() => alertar()}>Enviar</button>
+      <button onClick={alertar}>Enviar</button>
     </Fragment>
   )
 }
