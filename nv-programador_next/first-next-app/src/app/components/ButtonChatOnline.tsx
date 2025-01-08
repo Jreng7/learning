@@ -7,11 +7,9 @@ type Props = {
 
 export default function ButtonChatOnline({ children, clicou}: Props){
 
-  alert(children)
-
   return (
     <Fragment>
-      <button onClick={clicou}></button>
+      <button onClick={clicou}>{children}</button>
     </Fragment>
   )
 } 

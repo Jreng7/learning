@@ -11,7 +11,7 @@ export default function Example(){
 
   return (
     <Fragment>
-      <Button clicou={alertar}>Teste</Button>
+      <Button clicou={() => alertar()}>Teste</Button>
     </Fragment>
   )
 }
