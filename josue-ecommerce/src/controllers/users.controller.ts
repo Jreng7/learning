@@ -25,31 +25,31 @@ export class UsersController {
   }
 
   // metodo post - inserir usuaŕios.
-  static insertUser(req: Request, res: Response) {
+  static async insertUser(req: Request, res: Response) {
 
     let user = req.body
-    getFirestore().collection("users").add(user)
+    await getFirestore().collection("users").add(user)
 
     res.send({message: "Usuário criado com sucesso!"})
   }
+
 
   // metodo put - atualizar usuário
   static updateUserById(req: Request, res: Response){
     let userId = Number(req.params.id)
     let user = req.body
-    let indexOf = users.findIndex((usuarioUpdate: User) => usuarioUpdate.id === userId)
+    let indexOf = users.findIndex((itemPercorrido: User) => itemPercorrido.id === userId)
     users[indexOf].nome = user.nome
-    user[indexOf].email = user.email
-    res.send({message: "Usuário atualizado com sucesso!"})
+    users[indexOf].email = user.email
+    return res.send({message: "Usuário atualizado com sucesso!"})
   }
-
+  
   // Metodo delete
   static deleteUserById(req: Request, res: Response){
     let userId = Number(req.params.id)
-    let findUser = users.findIndex((user: User) => user.id === userId)
-    users.splice(findUser, 1)
+    let user = users.findIndex((elementoArray: User) => elementoArray.id === userId)
+    users.splice(user, 1)
     res.send({message: "Usuário deletado com sucesso."})
   }
-
+  
 }
-
