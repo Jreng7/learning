@@ -1,13 +1,13 @@
 
 import express from "express";
 import { initializeApp } from "firebase-admin/app";
-import { routes } from "./routes";
+import { routes } from "./routes/routes";
 
 initializeApp();
-const app = express();
+const server= express();
 
-routes(app);
+routes(server);
 
-app.listen(3000, () => {
+server.listen(3000, () => {
   console.log("Server is running on port 3000");
 })
