@@ -8,10 +8,6 @@ type User = {
   email: string;
 }
 
-
-let users: User[] = []
-
-
 export class UsersController {
 
 
@@ -67,10 +63,11 @@ export class UsersController {
   
 
   // Metodo delete
-  static deleteUserById(req: Request, res: Response){
-    let userId = Number(req.params.id)
-    let user = users.findIndex((elementoArray: User) => elementoArray.id === userId)
-    users.splice(user, 1)
+  static async deleteUserById(req: Request, res: Response){
+    let userId = req.params.id
+
+    await getFirestore().collection("users").doc(userId).delete()
+
     res.send({message: "Usuário deletado com sucesso."})
   }
   
