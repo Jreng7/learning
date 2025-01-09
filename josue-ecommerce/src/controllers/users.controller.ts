@@ -1,15 +1,19 @@
 import { Request, Response } from 'express';
 import { getFirestore } from 'firebase-admin/firestore'
 
+
 type User = {
   id: number;
   nome: string;
   email: string;
 }
 
+
 let users: User[] = []
 
+
 export class UsersController {
+
 
   // metodo get - Pegar todos os usuários
   static async getAllUsers(req: Request, res: Response){
@@ -23,6 +27,7 @@ export class UsersController {
     res.send(usersdoc)
   }
 
+
   // metodo get - Pegar usuário pelo Id
   static async getUserById(req: Request, res: Response){
     let userId = req.params.id
@@ -33,6 +38,7 @@ export class UsersController {
     }
     res.send(user)
   }
+
 
   // metodo post - inserir usuaŕios.
   static async insertUser(req: Request, res: Response) {
@@ -48,14 +54,18 @@ export class UsersController {
 
   // metodo put - atualizar usuário
   static updateUserById(req: Request, res: Response){
-    let userId = Number(req.params.id)
-    let user = req.body
-    let indexOf = users.findIndex((itemPercorrido: User) => itemPercorrido.id === userId)
-    users[indexOf].nome = user.nome
-    users[indexOf].email = user.email
+    let userId = req.params.id
+    let user = req.body as User;
+   
+    getFirestore().collection("users").doc(userId).set({
+      nome: user.nome,
+      email: user.email
+    })
+
     res.send({message: "Usuário atualizado com sucesso!"})
   }
   
+
   // Metodo delete
   static deleteUserById(req: Request, res: Response){
     let userId = Number(req.params.id)

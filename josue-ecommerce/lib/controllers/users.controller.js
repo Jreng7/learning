@@ -44,11 +44,12 @@ class UsersController {
     }
     // metodo put - atualizar usuário
     static updateUserById(req, res) {
-        let userId = Number(req.params.id);
+        let userId = req.params.id;
         let user = req.body;
-        let indexOf = users.findIndex((itemPercorrido) => itemPercorrido.id === userId);
-        users[indexOf].nome = user.nome;
-        users[indexOf].email = user.email;
+        (0, firestore_1.getFirestore)().collection("users").doc(userId).set({
+            nome: user.nome,
+            email: user.email
+        });
         res.send({ message: "Usuário atualizado com sucesso!" });
     }
     // Metodo delete
