@@ -4,15 +4,15 @@ import { getFirestore } from 'firebase-admin/firestore'
 type User = {
   id: number;
   nome: string;
-  email: string
+  email: string;
 }
 
-const users: User[] = []
+let users: User[] = []
 
 export class UsersController {
 
   // metodo get - Pegar todos os usuários
-  static getAllUsers(req: Request, res: Response){
+  static getAllUsers(res: Response){
     res.send(users)
   }
 
@@ -42,7 +42,7 @@ export class UsersController {
     let indexOf = users.findIndex((itemPercorrido: User) => itemPercorrido.id === userId)
     users[indexOf].nome = user.nome
     users[indexOf].email = user.email
-    return res.send({message: "Usuário atualizado com sucesso!"})
+    res.send({message: "Usuário atualizado com sucesso!"})
   }
   
   // Metodo delete
