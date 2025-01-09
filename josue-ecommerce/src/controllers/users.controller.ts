@@ -28,9 +28,11 @@ export class UsersController {
   static async insertUser(req: Request, res: Response) {
 
     let user = req.body
-    await getFirestore().collection("users").add(user)
+    const userSave = await getFirestore().collection("users").add(user)
 
-    res.send({message: "Usuário criado com sucesso!"})
+    res.send({
+      message: `Usuário ${userSave.id} criado com sucesso!`
+    })
   }
 
 
