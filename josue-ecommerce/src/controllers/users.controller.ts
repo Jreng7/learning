@@ -7,7 +7,6 @@ type User = {
   email: string
 }
 
-let id = 0;
 const users: User[] = []
 
 export class UsersController {
