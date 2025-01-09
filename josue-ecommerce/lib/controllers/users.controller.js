@@ -14,14 +14,23 @@ const firestore_1 = require("firebase-admin/firestore");
 let users = [];
 class UsersController {
     // metodo get - Pegar todos os usuários
-    static getAllUsers(res) {
-        res.send(users);
+    static getAllUsers(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const snapshot = yield (0, firestore_1.getFirestore)().collection("users").get();
+            const usersdoc = snapshot.docs.map(refDoc => {
+                return Object.assign({ id: refDoc.id }, refDoc.data());
+            });
+            res.send(usersdoc);
+        });
     }
     // metodo get - Pegar usuário pelo Id
     static getUserById(req, res) {
-        let userId = Number(req.params.id);
-        let user = users.find((usuario) => usuario.id === userId);
-        res.send(user);
+        return __awaiter(this, void 0, void 0, function* () {
+            let userId = req.params.id;
+            const doc = yield (0, firestore_1.getFirestore)().collection("users").doc(userId).get();
+            let user = Object.assign({ id: doc.id }, doc.data());
+            res.send(user);
+        });
     }
     // metodo post - inserir usuaŕios.
     static insertUser(req, res) {

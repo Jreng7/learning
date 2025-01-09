@@ -12,14 +12,25 @@ let users: User[] = []
 export class UsersController {
 
   // metodo get - Pegar todos os usuários
-  static getAllUsers(res: Response){
-    res.send(users)
+  static async getAllUsers(req: Request, res: Response){
+    const snapshot = await getFirestore().collection("users").get()
+    const usersdoc = snapshot.docs.map(refDoc => {
+      return {
+        id: refDoc.id,
+        ...refDoc.data()
+      }
+    });
+    res.send(usersdoc)
   }
 
   // metodo get - Pegar usuário pelo Id
-  static getUserById(req: Request, res: Response){
-    let userId = Number(req.params.id)
-    let user = users.find((usuario: User) => usuario.id === userId)
+  static async getUserById(req: Request, res: Response){
+    let userId = req.params.id
+    const doc = await getFirestore().collection("users").doc(userId).get()
+    let user = {
+      id: doc.id,
+      ...doc.data()
+    }
     res.send(user)
   }
 
