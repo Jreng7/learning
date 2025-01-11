@@ -1,9 +1,9 @@
-
 type HeaderProps = {
   nomeDoCliente?: string;
 }
 
 export function Header(props: HeaderProps){
+
   return (
     <>
       <header>
