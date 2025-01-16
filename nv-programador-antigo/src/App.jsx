@@ -17,7 +17,6 @@ export default function App() {
 
         <p>E-mail:</p>
         <input type="email" onChange={(e) => {setEmail(e.target.value)}}/>
-
         <br />
 
         <p>Mensagem</p>
