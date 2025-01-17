@@ -1,6 +1,8 @@
-
+import { useState } from 'react';
 
 export default function App() {
+
+  const [num1, setNum1] = useState(0);
  
   return (
     <>
