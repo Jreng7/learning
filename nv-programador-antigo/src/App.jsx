@@ -15,12 +15,23 @@ export default function App() {
         setResultado(num1 + num2)
         break;
 
+      case '-':
+        setResultado(num1 - num2)
+        break;
+
+      case '/':
+        setResultado(num1 / num2)
+        break;
+      
+      case '*':
+        setResultado(num1 * num2)
+        break;
+
       default:
         break;
     }
 
   }
-
 
   return (
     <>
