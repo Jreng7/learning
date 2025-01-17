@@ -1,25 +1,20 @@
 
+import { useState } from 'react'
 
 export default function App() {
 
-
-  const usuarios = [
-    {name: 'visa', lastName: 'card1'},
-    {name: 'mastercard', lastName: 'card2'},
-  ];
+  const [logged, setLogged] = useState(false);
 
 
   return (
+
     <>
+      {logged && <p>Promoções do dia.</p> }
 
-      {usuarios.map((itemArray) => {
-        return (
-          <>
-            {itemArray.name} {itemArray.lastName} <br />
-          </>
-        ) 
-      })}
-
+      {!logged && 
+        <p>Você não está logado, por favor, faça login.</p>
+      }
     </>
+
   );
 }
