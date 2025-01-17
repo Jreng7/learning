@@ -10,9 +10,14 @@ export default function App() {
   useEffect(() => {
     
     switch (operacao) {
-      case '+':
-        setResultado(Number(num1) + Number(num2))
-        break;
+      case '+': {
+        const results = (num1 + num2);
+
+        if(!isNaN(results)){
+          setResultado(num1 + num2)
+        }
+      }
+      break;
 
 
       case '-':
