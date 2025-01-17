@@ -2,20 +2,20 @@
 
 export default function App() {
 
-  
+
   const usuarios = [
-    {name: 'visa'},
-    {name: 'mastercard'},
+    {name: 'visa', lastName: 'card1'},
+    {name: 'mastercard', lastName: 'card2'},
   ];
 
 
   return (
     <>
 
-      {usuarios.map((item) => {
+      {usuarios.map((itemArray) => {
         return (
           <>
-          {item}
+            {itemArray.name} {itemArray.lastName} <br />
           </>
         ) 
       })}
