@@ -2,23 +2,23 @@
 
 export default function App() {
 
+  
   const usuarios = [
-    "Joaquim",
-    "Silva",
-    "Marcos"
+    {name: 'visa'},
+    {name: 'mastercard'},
   ];
+
 
   return (
     <>
 
-      {usuarios.map(user => {
+      {usuarios.map((item) => {
         return (
           <>
-            {user}
+          {item}
           </>
-        )
+        ) 
       })}
-
 
     </>
   );
