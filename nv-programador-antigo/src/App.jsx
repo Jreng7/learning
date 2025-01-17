@@ -6,13 +6,20 @@ export default function App() {
     "Joaquim",
     "Silva",
     "Marcos"
-  ]
+  ];
 
   return (
     <>
-      {usuarios.map() => {
-        
-      }}
+
+      {usuarios.map(user => {
+        return (
+          <>
+            {user}
+          </>
+        )
+      })}
+
+
     </>
-  )
+  );
 }
