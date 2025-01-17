@@ -7,6 +7,10 @@ export default function App() {
   const [num2, setNum2] = useState(0);
   const [resultado, setResultado] = useState(0);
 
+  useEffect(() => {
+    alert()
+  }, [num1])
+
   function handleSubmit(e){
     e.preventDefault();
 
