@@ -8,12 +8,7 @@ export default function App() {
   const [resultado, setResultado] = useState(0);
 
   useEffect(() => {
-    alert()
-  }, [num1])
-
-  function handleSubmit(e){
-    e.preventDefault();
-
+    
     switch (operacao) {
       case '+':
         setResultado(num1 + num2)
@@ -35,7 +30,9 @@ export default function App() {
         break;
     }
 
-  }
+
+  }, [num1, num2, operacao])
+
 
   return (
     <>
