@@ -35,8 +35,7 @@ export default function App() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-
+    
         <input type="number" onChange={(e) => {setNum1(e.target.valueAsNumber)}} value={num1}/>
 
         <select onChange={(e) => {setOperacao(e.target.value)}} value={operacao}>
@@ -50,7 +49,6 @@ export default function App() {
         <input type="number" onChange={(e) => {setNum2(e.target.valueAsNumber)}} value={num2}/>
         <button type="submit">Calcular</button><b>Resultado:</b>{resultado}
 
-      </form>
     </>
   )
 }
