@@ -3,13 +3,17 @@ import { useState } from 'react';
 
 export default function App() {
 
-  const [nome, setNome] = useState('');
+  const [nome, setNome] = useState('Josué Ribeiro');
   const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
 
+  function handleSubmit(e){
+    e.preventDefault();
+  }
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <p>Nome:</p>
         <input type="text" onChange={(e) => {setNome(e.target.value);}} value={nome}/>
         
