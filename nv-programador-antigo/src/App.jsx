@@ -11,8 +11,9 @@ export default function App() {
     
     switch (operacao) {
       case '+':
-        setResultado(num1 + num2)
+        setResultado(Number(num1) + Number(num2))
         break;
+
 
       case '-':
         setResultado(num1 - num2)
