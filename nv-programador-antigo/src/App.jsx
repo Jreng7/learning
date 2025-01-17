@@ -11,16 +11,18 @@ export default function App() {
     <>
       <form>
         <p>Nome:</p>
-        <input type="text" onChange={(e) => {setNome(e.target.value)}}/>
+        <input type="text" onChange={(e) => {setNome(e.target.value);}} value={nome}/>
         
         <br />
 
         <p>E-mail:</p>
-        <input type="email" onChange={(e) => {setEmail(e.target.value)}}/>
+        <input type="email" onChange={(e) => {setEmail(e.target.value)}} value={email}/>
         <br />
 
         <p>Mensagem</p>
-        <textarea placeholder="Digite sua mensagem:" onChange={(e) => {setMensagem(e.target.value)}}></textarea>
+        <textarea placeholder="Digite sua mensagem:" onChange={(e) => {setMensagem(e.target.value)}}>
+          {mensagem}
+        </textarea>
 
         <br /><br />
         <button type="submit">Enviar</button>
