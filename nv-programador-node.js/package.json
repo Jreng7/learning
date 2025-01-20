@@ -1,7 +1,7 @@
 {
   "name": "nv-programador-node.js",
   "version": "1.0.0",
-  "main": "server.ts",
+  "main": "src/server.ts",
   "license": "MIT",
   "scripts": {
   "dev": "node --watch src/server.ts"
