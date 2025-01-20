@@ -7,7 +7,7 @@ server.get("/", (req: Request, res: Response) => {
 })
 
 server.get("/criancas/:id_pijamas", (req: Request, res: Response) => {
-  const params = req.params
+  const params = req.params.id
   return res.json({message: "Pijama de bolinhas azuis."})
 })
 
