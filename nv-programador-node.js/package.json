@@ -4,12 +4,15 @@
   "main": "src/server.ts",
   "license": "MIT",
   "scripts": {
-  "dev": "node --watch src/server.ts"
+    "dev": "node --watch src/server.ts"
   },
   "dependencies": {
     "express": "^4.21.2"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   }
 }
