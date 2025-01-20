@@ -1,0 +1,30 @@
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar dependências e bibliotecas
+node_modules/
+vendor/
+
+# Ignorar arquivos de build
+dist/
+build/
+out/
+
+# Ignorar arquivos temporários ou de log
+*.log
+*.tmp
+*.bak
+
+# Ignorar configurações do editor/IDE
+.vscode/
+.idea/
+*.iml
+
+# Ignorar arquivos de ambiente
+.env
+.env.local
+
+# Ignorar cache
+*.cache
+.cache/
