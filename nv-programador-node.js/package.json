@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "server.js",
   "license": "MIT",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js"
   },
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
   }
 }
