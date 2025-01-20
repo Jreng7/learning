@@ -1,12 +1,8 @@
 {
   "name": "nv-programador-node.js",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.ts",
   "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "dev": "node --watch src/server.js"
-  },
   "dependencies": {
     "express": "^4.21.2"
   },
