@@ -6,8 +6,8 @@ server.get("/", (req: Request, res: Response) => {
   return res.json({message: "Testando servidor."})
 })
 
-server.get("/criancas/:id_pijamas", (req: Request, res: Response) => {
-  const params = req.params.id
+server.get("/criancas/:id_parametro", (req: Request, res: Response) => {
+  const id_pijamas = req.params.id_parametro
   return res.json({message: "Pijama de bolinhas azuis."})
 })
 
