@@ -1,7 +1,7 @@
 import { IAluno } from "../models/aluno";
 
 export class AlunoService {
-  
+
   getAll(){
 
   }
@@ -10,8 +10,8 @@ export class AlunoService {
 
   }
 
-  add(data: IAluno){
-
+  add(data: IAluno): IAluno {
+    return data
   }
 
   update(id: string){
