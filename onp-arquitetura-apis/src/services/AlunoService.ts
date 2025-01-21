@@ -14,12 +14,12 @@ export class AlunoService {
     return data
   }
 
-  update(id: string){
-
+  update(id: string): IAluno {
+    return {name: "Joaquim", email: "joaq@gmail.com", phone: "351", password: "1587", cpf: "1587"}
   }
 
-  delete(id: string){
-
+  delete(id: string): IAluno{
+    return {name: "Joaquim", email: "joaq@gmail.com", phone: "351", password: "1587", cpf: "1587"}
   }
 
 }
