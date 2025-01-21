@@ -1,14 +1,11 @@
-import express, { request, Request, Response } from 'express';
+import express from 'express';
+import { router } from '../routes'
 
 const server = express();
 
-server.get("/", (req: Request, res: Response) => {
-  return res.json({message: "Testando servidor."})
-})
 
-server.get("/criancas/:id", (req: Request, res: Response) => {
-  const id_pijamas = req.params.id
-  return res.json({id: id_pijamas, message: "Pijama de bolinhas azuis."})
-})
+server.use(express.urlencoded({extended: true}))
+server.use(router)
 
-server.listen(3000);
+
+server.listen(3333);
