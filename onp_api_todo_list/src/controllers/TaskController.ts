@@ -3,7 +3,13 @@ import { ITask } from '../models/Task'
 
 export class TaskController {
 
-  addController(req: Request, res: Response){
+  addController(req: Request, res: Response) {
     const { id, description, data, status } = req.body
+
+    if(id && description && data && status) {
+      const result = console.log("oi")
+    } else {
+      res.status(401).json({error: "Sorry, cant find that!"})
+    }
   }
 } 
