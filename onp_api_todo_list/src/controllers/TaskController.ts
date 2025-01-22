@@ -3,7 +3,7 @@ import { ITask } from '../models/Task'
 
 export class TaskController {
 
-  addController(req: Request, res: Response) {
+  add(req: Request, res: Response) {
     const { id, description, data, status } = req.body
 
     if(id && description && data && status) {
