@@ -18,11 +18,11 @@ export class TaskController {
 
     if(id && description && data && status) {
       const result = taskService.addService(req.body)
-      return result
+      res.json(result)
     } else {
       res.status(401).json({error: "Sorry, cant find that!"})
     }
-    
+
   }
 
 

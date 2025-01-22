@@ -8,8 +8,9 @@ export class TaskRepository {
     this.tasks = []
   }
 
-  addRepository(dados: Itask){
+  addRepository(dados: Itask): Itask {
     this.tasks.push(dados)
+    return dados
   }
 
 }
