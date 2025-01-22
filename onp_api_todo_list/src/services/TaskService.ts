@@ -1,8 +1,9 @@
-import { Request, Response } from 'express'
+import { ITask } from '../models/Task'
+
 
 export class TaskService {
 
-  addService(req: Request, res: Response) {
+  addService(dados: ITask) {
     
   }
 

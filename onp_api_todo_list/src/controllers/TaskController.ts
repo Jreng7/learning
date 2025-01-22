@@ -1,5 +1,7 @@
 import { Request, Response } from 'express'
-import { ITask } from '../models/Task'
+import { TaskService } from '../services/TaskService'
+
+const taskService = new TaskService()
 
 export class TaskController {
 
@@ -7,7 +9,7 @@ export class TaskController {
     const { id, description, data, status } = req.body
 
     if(id && description && data && status) {
-      const result = console.log("oi")
+      const result = taskService.addService(req.body)
     } else {
       res.status(401).json({error: "Sorry, cant find that!"})
     }
