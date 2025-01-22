@@ -1,10 +1,9 @@
-import { ITask } from '../models/Task'
-
+import { Itask } from '../models/Task'
 
 export class TaskService {
 
-  addService(dados: ITask) {
-    
+  addService(dados: Itask): Itask {
+   return dados;
   }
 
-}
+} 

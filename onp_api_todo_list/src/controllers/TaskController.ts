@@ -5,13 +5,27 @@ const taskService = new TaskService()
 
 export class TaskController {
 
+
+
+
+
+
+
+
   add(req: Request, res: Response) {
+
     const { id, description, data, status } = req.body
 
     if(id && description && data && status) {
       const result = taskService.addService(req.body)
+      return result
     } else {
       res.status(401).json({error: "Sorry, cant find that!"})
     }
+    
   }
+
+
+
+
 } 

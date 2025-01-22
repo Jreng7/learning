@@ -1,5 +1,5 @@
 
-export interface ITask {
+export interface Itask {
 
   id: string;
   description: string;
