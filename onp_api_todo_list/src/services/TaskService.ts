@@ -20,8 +20,6 @@ export class TaskService {
 
   }
 
-  getServiceById(){}
-
   addService(dados: Itask): Itask {
    return taskRepository.addRepository(dados)
   }

@@ -3,7 +3,7 @@ import { TaskService } from '../services/TaskService'
 
 const taskService = new TaskService()
 
-export class TaskController {
+class TaskController {
 
   // Metodo GET - Listar as Tasks completadas.
   get(req: Request, res: Response){
@@ -23,10 +23,13 @@ export class TaskController {
 
   // Metodo GET por ID - Lista apenas uma tarefa.
   getById(req: Request, res: Response){
+
     const { id_task } = req.params
 
-    if ( id_task ) {
+    if(id_task) {
 
+    } else {
+      res.json({error: "Invalid id task"}).status(401)
     }
   }
 
@@ -50,7 +53,7 @@ export class TaskController {
 
   }
 
-
-
-
 } 
+
+
+export default TaskController;
