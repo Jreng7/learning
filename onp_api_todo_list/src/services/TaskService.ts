@@ -58,9 +58,9 @@ export class TaskService {
 
   updateService(bodyTask: Itask, id: string): Itask {
 
-    const task = this.getById(id)
+    const posicaoIndex = this.updateFuncaoByIndex(id)
 
-    return taskRepository.updateRepository(bodyTask, id)
+    return taskRepository.updateRepository(bodyTask, posicaoIndex)
   }
 
 

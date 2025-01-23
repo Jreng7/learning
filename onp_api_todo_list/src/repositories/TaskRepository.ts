@@ -21,7 +21,7 @@ export class TaskRepository {
   }
 
   // Metodo UPDATE
-  updateRepository(taskUpdate: Itask, id: string): Itask {
+  updateRepository(taskUpdate: Itask, index: number | null ): Itask {
     
   }
 
