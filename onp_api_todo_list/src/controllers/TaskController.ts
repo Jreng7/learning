@@ -28,8 +28,8 @@ class TaskController {
 
     if ( id_task ) {
       
-      const result = taskService.getById(id_task) 
-
+      const result = taskService.getById(id_task)
+      res.json(result) 
 
     } else {
       res.status(401).json({error: "Sorry, cant find that, case id_task is invalid."})
@@ -54,6 +54,29 @@ class TaskController {
     } else {
       res.status(401).json({error: "Sorry, cant find that result"})
     }
+
+  }
+
+  // Metodo PUT - Alterar Tasks
+  update(req: Request, res: Response){
+
+    const { id, description, data, status } = req.body
+    const { id_task } = req.params
+
+    if ( id && description && data && status && id_task ) {
+
+      if( status === "in_progress" || status === "completed") {
+
+        taskService.updateService(req.body, id_task)
+
+      } else {
+        res.json({error: "Invalid status"})
+      }
+
+    } else {
+      res.status(401).json({error: "Não encontrado"})
+    }
+
 
   }
 

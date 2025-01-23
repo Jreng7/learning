@@ -20,4 +20,9 @@ export class TaskRepository {
     return dados
   }
 
+  // Metodo UPDATE
+  updateRepository(taskUpdate: Itask, id: string): Itask {
+    
+  }
+
 }

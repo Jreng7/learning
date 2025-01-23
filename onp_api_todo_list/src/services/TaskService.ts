@@ -20,23 +20,52 @@ export class TaskService {
 
   }
 
-  getById(id: string): Itask {
+  getById(id: string): Itask | {} {
     const result = taskRepository.getRepository()
 
+    let task = {}
+
     result.map((objeto) => {
-      if(objeto.id === id) {
-        
+      if ( objeto.id === id ) {
+        task = objeto
       }
     })
 
-
-    return result
+    return task
   }
 
+  
   addService(dados: Itask): Itask {
-   return taskRepository.addRepository(dados)
+    return taskRepository.addRepository(dados)
   }
-}     
+
+  
+  updateFuncaoByIndex( id: string ): number | null {
+
+    const resultado = taskRepository.getRepository()
+    let position: number | null = null;
+
+    resultado.map((objetoIndex, index) => { 
+      if( objetoIndex.id === id ) {
+        position = index
+      }
+    })
+
+    return position
+
+  }
+
+
+  updateService(bodyTask: Itask, id: string): Itask {
+
+    const task = this.getById(id)
+
+    return taskRepository.updateRepository(bodyTask, id)
+  }
+
+
+
+}       
 
 
 
