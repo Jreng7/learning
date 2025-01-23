@@ -21,8 +21,13 @@ export class TaskController {
 
   }
 
-  getId(req: Request, res: Response){
-    
+  // Metodo GET por ID - Lista apenas uma tarefa.
+  getById(req: Request, res: Response){
+    const { id_task } = req.params
+
+    if ( id_task ) {
+
+    }
   }
 
   // Metodo POST - Inserir Tasks
