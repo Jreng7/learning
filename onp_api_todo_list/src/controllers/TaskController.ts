@@ -5,9 +5,13 @@ const taskService = new TaskService()
 
 export class TaskController {
 
+  get(req: Request, res: Response){
+
+  }
 
 
-  addController(req: Request, res: Response) {
+  // Metodo POST - Inserir Tasks
+  add(req: Request, res: Response) {
 
     const { id, description, data, status } = req.body
 
