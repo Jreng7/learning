@@ -2,14 +2,14 @@ import { Itask } from "../models/Task";
 
 export class TaskRepository {
 
-  private tasks: Itask[];
+  private arrayDeObjetoTask: Itask[];
 
   constructor(){
-    this.tasks = []
+    this.arrayDeObjetoTask = []
   }
 
   addRepository(dados: Itask): Itask {
-    this.tasks.push(dados)
+    this.arrayDeObjetoTask.push(dados)
     return dados
   }
 
