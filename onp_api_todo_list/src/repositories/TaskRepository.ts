@@ -8,6 +8,13 @@ export class TaskRepository {
     this.arrayDeObjetoTask = []
   }
 
+  // Metodo GET - Todas as Tasks
+  getRepository(){
+    return this.arrayDeObjetoTask
+  }
+
+
+  // Metodo POST
   addRepository(dados: Itask): Itask {
     this.arrayDeObjetoTask.push(dados)
     return dados

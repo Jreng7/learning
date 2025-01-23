@@ -5,7 +5,19 @@ const taskService = new TaskService()
 
 export class TaskController {
 
+  // Metodo GET - Listar as Tasks completadas.
   get(req: Request, res: Response){
+
+    const { status } = req.query
+
+    if ( status && (status === "in_progress" || status === "completed")) {
+
+      taskService.getService(status)
+
+    } else {
+      res.status(401).send('<error>Corrigir o parâmetro enviado!</error>')
+    }
+
 
   }
 
