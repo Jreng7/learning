@@ -40,10 +40,10 @@ export class TaskService {
   }
 
   
-  updateFuncaoByIndex( id: string ): number | null {
+  updateFuncaoByIndex( id: string ): number {
 
     const resultado = taskRepository.getRepository()
-    let position: number | null = null;
+    let position: number = -1;
 
     resultado.map((objetoIndex, index) => { 
       if( objetoIndex.id === id ) {
@@ -56,11 +56,15 @@ export class TaskService {
   }
 
 
-  updateService(bodyTask: Itask, id: string): Itask {
+  updateService(bodyReq: Itask, id_task: string) {
 
-    const posicaoIndex = this.updateFuncaoByIndex(id)
+    const posicaoIndex = this.updateFuncaoByIndex(id_task)
 
-    return taskRepository.updateRepository(bodyTask, posicaoIndex)
+    if ( posicaoIndex !== -1 ) {
+      return taskRepository.updateRepository(bodyReq, posicaoIndex)
+    }
+
+
   }
 
 

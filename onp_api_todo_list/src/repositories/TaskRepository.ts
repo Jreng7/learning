@@ -21,8 +21,8 @@ export class TaskRepository {
   }
 
   // Metodo UPDATE
-  updateRepository(taskUpdate: Itask, index: number | null ): Itask {
-    
+  updateRepository(bodyReq: Itask, posicaoIndex: number ) {
+    this.arrayDeObjetoTask[posicaoIndex] = bodyReq
   }
 
 }
