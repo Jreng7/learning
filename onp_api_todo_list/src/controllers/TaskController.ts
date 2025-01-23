@@ -24,13 +24,17 @@ class TaskController {
   // Metodo GET por ID - Lista apenas uma tarefa.
   getById(req: Request, res: Response){
 
-    const { id_task } = req.params
+    const { id_task } = req.params;
 
-    if(id_task) {
+    if ( id_task ) {
+      
+      const result = taskService.getById(id_task) 
+
 
     } else {
-      res.json({error: "Invalid id task"}).status(401)
+      res.status(401).json({error: "Sorry, cant find that, case id_task is invalid."})
     }
+    
   }
 
   // Metodo POST - Inserir Tasks

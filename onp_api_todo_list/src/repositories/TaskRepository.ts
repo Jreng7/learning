@@ -13,6 +13,9 @@ export class TaskRepository {
     return this.arrayDeObjetoTask
   }
 
+  // Metodo GET - Por id
+  getById(){}
+
 
   // Metodo POST
   addRepository(dados: Itask): Itask {

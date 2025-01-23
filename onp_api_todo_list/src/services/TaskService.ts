@@ -20,6 +20,10 @@ export class TaskService {
 
   }
 
+  getById(id: string) {
+    const result = taskRepository.getById()
+  }
+
   addService(dados: Itask): Itask {
    return taskRepository.addRepository(dados)
   }
