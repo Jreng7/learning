@@ -20,8 +20,17 @@ export class TaskService {
 
   }
 
-  getById(id: string) {
-    const result = taskRepository.getById()
+  getById(id: string): Itask {
+    const result = taskRepository.getRepository()
+
+    result.map((objeto) => {
+      if(objeto.id === id) {
+        
+      }
+    })
+
+
+    return result
   }
 
   addService(dados: Itask): Itask {
