@@ -5,20 +5,25 @@ const taskRepository = new TaskRepository()
 
 export class TaskService {
 
-  getService(dado: string){
+  getService(statusQuery: string){
 
     const result = taskRepository.getRepository()
+    const taskStatus: Itask[] = []
 
     result.map((objRepository) => {
-      if ( objRepository.status === dado ) {
-        
+      if ( objRepository.status === statusQuery ) {
+        taskStatus.push(objRepository)
       } 
     })
+
+    return taskStatus
 
   }
 
   addService(dados: Itask): Itask {
    return taskRepository.addRepository(dados)
   }
-
 }     
+
+
+

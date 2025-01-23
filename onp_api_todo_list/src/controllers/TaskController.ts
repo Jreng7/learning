@@ -12,15 +12,14 @@ export class TaskController {
 
     if ( status && (status === "in_progress" || status === "completed")) {
 
-      taskService.getService(status)
+      const result = taskService.getService(status)
+      res.status(200).json(result)
 
     } else {
       res.status(401).send('<error>Corrigir o parâmetro enviado!</error>')
     }
 
-
   }
-
 
   // Metodo POST - Inserir Tasks
   add(req: Request, res: Response) {

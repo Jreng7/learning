@@ -9,7 +9,7 @@ export class TaskRepository {
   }
 
   // Metodo GET - Todas as Tasks
-  getRepository(){
+  getRepository(): Itask[] {
     return this.arrayDeObjetoTask
   }
 
