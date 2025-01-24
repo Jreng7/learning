@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import { NextFunction, Router } from 'express'
 import { AlunoController } from '../controllers/AlunoController'
 
 export const router = Router()
@@ -6,7 +6,9 @@ export const router = Router()
 const alunoController = new AlunoController();
 
 
-const authMiddleware = ( req: Request, res: Response )
+const authMiddleware = ( req: Request, res: Response, next: NextFunction ) => {
+  
+}
 
 
 router.get("/aluno", alunoController.getAllStudents) //  Buscar todos os alunos.
