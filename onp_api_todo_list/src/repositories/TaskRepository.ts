@@ -22,11 +22,13 @@ export class TaskRepository {
 
   // Metodo UPDATE
   updateRepository(bodyReq: Itask, posicaoIndex: number ) {
-    
+
     this.arrayDeObjetoTask[posicaoIndex] = bodyReq
 
     return bodyReq
 
   }
+
+  // Metodo DELETE
 
 }

@@ -91,13 +91,17 @@ class TaskController {
     const { id_task } = req.params
 
     if ( id && description && data && status && id_task ) {
+      
       if ( status === "in_progress" || status === "completed" ) {
+
         const result = taskService.delete(req.body, id_task)
+
       } else {
-        res.status.(401).json({error: "Sorry, cant find that"})
+        res.json({error: "Sorry, cant find that"})
       }
+
     } else {
-      res.status(401).json({error: "Invalid params or Body request"})
+      res.json({error: "Invalid params or Body request"})
     }
 
   }
