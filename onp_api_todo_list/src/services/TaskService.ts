@@ -62,10 +62,10 @@ export class TaskService {
 
     if ( posicaoIndex !== -1 ) {
       return taskRepository.updateRepository(bodyReq, posicaoIndex)
+    } else {
+      return {}
     }
-
     
-
   }
 
 

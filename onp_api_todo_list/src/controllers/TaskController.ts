@@ -68,7 +68,12 @@ class TaskController {
       if( status === "in_progress" || status === "completed") {
 
         const resultado = taskService.updateService(req.body, id_task)
-        res.json(resultado)
+
+        if ( resultado ) {
+          res.json(resultado)
+        } else {
+          res.status(404).json({error: "Task not found"})
+        }
 
       } else {
         res.json({error: "Invalid status"})
