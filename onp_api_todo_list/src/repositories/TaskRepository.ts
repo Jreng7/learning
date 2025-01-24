@@ -31,7 +31,8 @@ export class TaskRepository {
 
   // Metodo DELETE
   deleteRepository(posicaoIndex: number ){
+
     delete this.arrayDeObjetoTask[posicaoIndex]
-    
+    return posicaoIndex
   }
 }
