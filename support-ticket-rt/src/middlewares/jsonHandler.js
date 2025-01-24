@@ -1,16 +1,18 @@
 
 export async function jsonHandler(req, res) {
   
-  const buffers = []
+  const buffersRequest = []
 
   for await (const chunk of req) {
-    buffers.push(chunk)
+    buffersRequest.push(chunk)
   }
 
   try {
-    req.body = JSON.parse(buffers.concat(buffers).toString())
-  } catch {
+    req.body = JSON.parse(Buffer.concat(buffersRequest).toString())
+  } catch (error) {
     req.body = null
   }
+
+  res.setHeader("Content-Type", "application/json")
 
 }
