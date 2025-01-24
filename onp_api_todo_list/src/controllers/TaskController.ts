@@ -10,7 +10,7 @@ class TaskController {
 
     const { status } = req.query
 
-    if ( status && (status === "in_progress" || status === "completed")) {
+    if ( status === "in_progress" || status === "completed" ) {
 
       const result = taskService.getService(status)
       res.status(200).json(result)
@@ -83,6 +83,22 @@ class TaskController {
       res.status(401).json({error: "Não encontrado"})
     }
 
+  }
+
+  delete(req: Request, res: Response){
+
+    const {id, description, data, status } = req.body
+    const { id_task } = req.params
+
+    if ( id && description && data && status && id_task ) {
+      if ( status === "in_progress" || status === "completed" ) {
+        const result = taskService.delete(req.body, id_task)
+      } else {
+        res.status.(401).json({error: "Sorry, cant find that"})
+      }
+    } else {
+      res.status(401).json({error: "Invalid params or Body request"})
+    }
 
   }
 

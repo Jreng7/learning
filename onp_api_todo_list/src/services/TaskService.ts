@@ -68,6 +68,10 @@ export class TaskService {
     
   }
 
+  delete(bodyReq: Itask, id_task: string) {
+    
+  }
+
 
 
 }       
