@@ -2,12 +2,12 @@
   "name": "apitickets_rt_nodejs",
   "version": "1.0.0",
   "description": "API de gerenciamento de tickets de suporte",
-  "main": "index.js",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "author": "Josué Ribeiro",
+  "license": "ISC"
 }
