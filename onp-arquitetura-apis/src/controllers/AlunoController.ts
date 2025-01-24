@@ -7,8 +7,8 @@ export class AlunoController {
   
   getAllStudents(req: Request, res: Response){
     const result = alunoService.getAll()
+    res.json(result)
   }
-
 
   getStudentById(req: Request, res: Response){
     const result = alunoService.getId(req.params.id)
