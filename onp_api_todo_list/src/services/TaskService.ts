@@ -64,6 +64,7 @@ export class TaskService {
       return taskRepository.updateRepository(bodyReq, posicaoIndex)
     }
 
+    
 
   }
 

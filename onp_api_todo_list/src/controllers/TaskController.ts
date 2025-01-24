@@ -67,7 +67,8 @@ class TaskController {
 
       if( status === "in_progress" || status === "completed") {
 
-        taskService.updateService(req.body, id_task)
+        const resultado = taskService.updateService(req.body, id_task)
+        res.json(resultado)
 
       } else {
         res.json({error: "Invalid status"})
