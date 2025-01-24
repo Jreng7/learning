@@ -1,6 +1,7 @@
-import http from 'node:http'
-import { routeHandler } from '../src/middlewares/routeHandler.js'
-import { jsonHandler } from './middlewares/jsonHandler.js'
+import http from 'node:http'  // Nativo
+
+import { routeHandler } from '../src/middlewares/routeHandler.js'  // Código interno
+import { jsonHandler } from './middlewares/jsonHandler.js' // Código interno
 
 
 async function handlerServer(req, res) {

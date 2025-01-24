@@ -38,14 +38,4 @@ export const routerTickets = [
 
 
 
-
-
-
-
-
-
-
-
-
-
 ]
