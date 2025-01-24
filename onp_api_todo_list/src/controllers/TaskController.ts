@@ -90,7 +90,11 @@ class TaskController {
     const { id_task } = req.body
 
     if ( id_task ) {
+
       const result = taskService.delete(id_task)
+      
+      res.json(result)
+
     } else {
       res.json({error: "id task not found"})
     }

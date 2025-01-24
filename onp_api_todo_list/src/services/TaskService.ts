@@ -69,7 +69,20 @@ export class TaskService {
   }
 
   delete(id_task: string) {
+
     const posicaoIndex = this.updateFuncaoByIndex(id_task)
+
+    if ( posicaoIndex !== -1 ) {
+
+      return taskRepository.deleteRepository(posicaoIndex)
+
+    } else {
+
+      return {}
+      
+    }
+  
+    
   }
 
 
