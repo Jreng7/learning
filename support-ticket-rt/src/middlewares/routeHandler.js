@@ -10,7 +10,7 @@ export function routeHandler(req, res) {
     return route.controller(req, res)
   }
 
-  return res.writeHead(404).end("Sorry, cant find that")
+  return res.writeHead(404, { 'Content-Type': 'text/plain'}).end("Sorry, cant find that")
 
 }
 
