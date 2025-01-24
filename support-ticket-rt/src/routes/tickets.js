@@ -1,6 +1,6 @@
 
 
-export const tickets = [
+export const routerTickets = [
   
   {
     method: "POST",
