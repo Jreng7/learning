@@ -85,12 +85,12 @@ class TaskController {
 
   }
 
-  delete(req: Request, res: Response){
+  deleteService(req: Request, res: Response){
 
-    const { id_task } = req.body
+    const { id_task } = req.params
 
     if ( id_task ) {
-
+      
       const result = taskService.delete(id_task)
       
       res.json(result)
