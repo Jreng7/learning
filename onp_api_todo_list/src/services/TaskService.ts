@@ -68,7 +68,7 @@ export class TaskService {
     
   }
 
-  delete(bodyReq: Itask, id_task: string) {
+  delete(id_task: string) {
     const posicaoIndex = this.updateFuncaoByIndex(id_task)
   }
 

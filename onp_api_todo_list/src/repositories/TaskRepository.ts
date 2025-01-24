@@ -30,7 +30,7 @@ export class TaskRepository {
   }
 
   // Metodo DELETE
-  deleteRepository(bodyReq: Itask, posicaoIndex: number ){
+  deleteRepository(posicaoIndex: number ){
     
   
   }
