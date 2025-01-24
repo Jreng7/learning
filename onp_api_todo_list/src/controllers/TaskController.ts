@@ -69,7 +69,7 @@ class TaskController {
 
         const resultado = taskService.updateService(req.body, id_task)
 
-        if ( resultado ) {
+        if ( Object.keys(resultado).length > 0 ) {
           res.json(resultado)
         } else {
           res.status(404).json({error: "Task not found"})
