@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto'
 
+
 export function create({ req, res }){
 
   const { equipment, description, user_name } = req.body
