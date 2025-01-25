@@ -1,4 +1,4 @@
-import { routes } from "../routes";
+import { routes } from "../routes/index.js";
 
 export function routeHandler(req, res) {
 
@@ -10,7 +10,7 @@ export function routeHandler(req, res) {
     return route.controller(req, res)
   }
 
-  return res.writeHead(404, { 'Content-Type': 'text/plain'}).end("Sorry, cant find that")
+  return res.writeHead(404, { 'Content-Type': 'text/plain' }).end("Sorry, cant find that")
 
 }
 
