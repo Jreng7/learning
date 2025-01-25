@@ -6,17 +6,14 @@ export const router = Router()
 const alunoController = new AlunoController();
 
 
-const authMiddleware = ( req: Request, res: Response, next: NextFunction ) => {
-
-  // Executar as verificações necessárias 
-
-  if ( req.headers.authorization ) {
+const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  // Executar as verificações necessárias
+  if(req.headers.authorization){
     // validar o token para identificar a existência do usuário
-    next();
+    next()
   } else {
-    return res.status(401).json({ error: 'Usuário não autenticado' });
+    return new Error('Usuário não autenticado!')
   }
-
 }
 
 

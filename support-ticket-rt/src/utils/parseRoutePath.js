@@ -6,4 +6,6 @@ export function parseRoutePath(path){
 
   const pathRegex = new RegExp(`^${params}(?<query>\\?(.*))?$`)
   
+  return pathRegex
+  
 }
