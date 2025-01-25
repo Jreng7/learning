@@ -1,1 +1,1 @@
-{}
+{"tickets":[{"id":"55d31f06-93a5-44c3-8155-87c044cb9ebf","equipment":"computador","description":"Computador não está ligando.","user_name":"Josué Ribeiro.","status":"open","created_at":"2025-01-25 19:56:28","updated_at":"2025-01-25 19:56:28"},{"id":"c829b36a-19ab-4a78-bfa5-356d6fa43773","equipment":"teclado","description":"A tecla de espaço não funciona","user_name":"Frederico Silva","status":"open","created_at":"2025-01-25 20:58:09","updated_at":"2025-01-25 20:58:09"}]}
