@@ -18,7 +18,7 @@ const middlewares = (req: Request, res: Response, next: NextFunction) => {
 
 }
 
-router.get('/tasks', middlewares, taskController.get)
+router.get('/tasks', taskController.get)
 router.get('/task/:id_task', taskController.getById)
 router.post('/task', taskController.add)
 router.put('/task/:id_task', taskController.update)

@@ -7,15 +7,19 @@ const taskService = new TaskService()
 class TaskController {
 
   // Metodo GET - Listar as Tasks completadas.
-  get(req: Request, res: Response){
+  async get(req: Request, res: Response){
 
     const { status } = req.query
 
     try {
-      const result = taskService.getService(status)
+      
+      await getSchema.validate(req.query)
+
+      const result = taskService.getService(status as string)
       res.status(200).json(result)
-    } catch () {
-      res.status(401).send('<error>Corrigir o parâmetro enviado!</error>')
+      
+    } catch (error) {
+      res.status(401).json({ error: error })
 
     }
 

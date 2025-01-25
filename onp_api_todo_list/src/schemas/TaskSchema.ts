@@ -1,7 +1,7 @@
-import yup from 'yup'
+import { object, string } from 'yup'
 
-export const getSchema = yup.object().shape({
-  status: yup.string().required().test('isValid', (verify) => {
+export const getSchema = object().shape({
+  status: string().required().test('isValid', (verify) => {
     if (verify === 'in_progress' || verify === 'completed') {
       return true;
     } else {
