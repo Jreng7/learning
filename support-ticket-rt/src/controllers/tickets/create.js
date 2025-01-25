@@ -8,7 +8,10 @@ export function create({ req, res }){
     id: randomUUID(),
     equipment,
     description,
-    user_name
+    user_name,
+    status: "open",
+    created_at: new Date().toISOString().slice(0, 19).replace('T', ' '),
+    updated_at: new Date().toISOString().slice(0, 19).replace('T', ' ')
   }
 
   return res.end(JSON.stringify(ticket))
