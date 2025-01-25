@@ -3,17 +3,20 @@ import TaskController from '../controllers/TaskController'
 
 const taskController = new TaskController()
 
+export const router = Router()
+
+
 const middlewares = (req: Request, res: Response, next: NextFunction) => {
+  
 
   if ( req.headers.authorization ) {
     // validação.
     next()
-  } 
+  } else {
+    res.status(404).send('Sorry, cant find that')
+  }
 
-  return res.status(404).send("Not found route")
 }
-
-export const router = Router()
 
 router.get('/tasks', middlewares, taskController.get)
 router.get('/task/:id_task', taskController.getById)
