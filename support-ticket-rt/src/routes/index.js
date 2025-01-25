@@ -1,6 +1,4 @@
 
+import { ticket } from './tickets.js';
 
-import { routerTickets } from "./tickets.js";
-
-
-export const routes = [...routerTickets]
+export const ticketRouter = [...ticket]
