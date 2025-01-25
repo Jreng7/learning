@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { TaskService } from '../services/TaskService'
+import { getSchema } from '../schemas/TaskSchema'
 
 const taskService = new TaskService()
 
@@ -10,20 +11,19 @@ class TaskController {
 
     const { status } = req.query
 
-    if ( status === "in_progress" || status === "completed" ) {
-
+    try {
       const result = taskService.getService(status)
       res.status(200).json(result)
-
-    } else {
+    } catch () {
       res.status(401).send('<error>Corrigir o parâmetro enviado!</error>')
+
     }
 
   }
 
   // Metodo GET por ID - Lista apenas uma tarefa.
   getById(req: Request, res: Response){
-
+ 
     const { id_task } = req.params;
 
     if ( id_task ) {
