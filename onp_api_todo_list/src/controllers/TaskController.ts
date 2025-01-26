@@ -45,15 +45,20 @@ class TaskController {
   }
 
   // Metodo POST - Inserir Tasks
-  add(req: Request, res: Response) {
+  async add(req: Request, res: Response) {
 
-    await getAddSchema.validade()
-
+    
     try {
+
+      await getAddSchema.validate()
+
       const result = taskService.addService(req.body)
       res.status(201).json(result)
+
     } catch (error) {
+
       res.status(401).json({ error: error })
+      
     }
 
   }
