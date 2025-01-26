@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { TaskService } from '../services/TaskService';
-import { getSchema, getByIdSchema, addSchema, updateSchema, updateSchemaParams, deleteSchema } from '../schemas/TaskSchema';
+import { getSchema, getByIdSchema, addSchema, updateSchema, updateSchemaParams, deleteSchema } from '../schemas/TaskSchema';  
 import {v4 as uuidv4} from 'uuid';
 
 const taskService = new TaskService()
@@ -48,7 +48,12 @@ class TaskController {
     
     try {
 
-      await addSchema.validate(req.body)
+      await addSchema.validate(req.body, {strict: true})
+
+      const id = uuidv4()
+
+      req.body.id = id
+
       const result = taskService.addService(req.body)
       res.status(201).json(result)
 

@@ -15,7 +15,6 @@ export const getByIdSchema = object().shape({
 })
 
 export const addSchema = object().shape({
-  id: string().required('O id é obrigatório.'),
   description: string().required(),
   data: string().required(),
   status: string().required().test('addIsvalid', (status) => {
