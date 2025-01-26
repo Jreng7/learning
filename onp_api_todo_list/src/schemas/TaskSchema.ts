@@ -18,5 +18,11 @@ export const getAddSchema = object().shape({
   id: string().required(),
   description: string().required(),
   data: string().required(),
-  status: string().required()
+  status: string().required().test('addIsvalid', (status) => {
+    if ( status === 'completed' || status === 'in_progress' ) {
+      return true
+    } else {
+      return false
+    }
+  })
 })

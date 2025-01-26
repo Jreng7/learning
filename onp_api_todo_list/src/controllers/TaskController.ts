@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { TaskService } from '../services/TaskService'
-import { getSchema, getByIdSchema } from '../schemas/TaskSchema'
+import { getSchema, getByIdSchema, getAddSchema } from '../schemas/TaskSchema'
 
 const taskService = new TaskService()
 
@@ -47,9 +47,7 @@ class TaskController {
   // Metodo POST - Inserir Tasks
   add(req: Request, res: Response) {
 
-    const { id, description, data, status } = req.body
-
-    // if ( status === "completed" || status === "in_progress" ) 
+    await getAddSchema.validade()
 
     try {
       const result = taskService.addService(req.body)
