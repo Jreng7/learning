@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { TaskService } from '../services/TaskService'
-import { getSchema, getByIdSchema, addSchema, updateSchema, allSchemaParams, deleteSchema } from '../schemas/TaskSchema'
+import { getSchema, getByIdSchema, addSchema, updateSchema, updateSchemaParams, deleteSchema } from '../schemas/TaskSchema'
 
 const taskService = new TaskService()
 
@@ -18,7 +18,7 @@ class TaskController {
       res.status(200).json(result)
       
     } catch (error) {
-      res.status(401).json({ error: error })
+      res.status(401).json({ error })
 
     }
 
@@ -37,7 +37,7 @@ class TaskController {
 
     } catch (error){
 
-      res.status(401).json({error: "Sorry, cant find that, case id_task is invalid."})
+      res.status(401).json({ error })
     }
     
   }
@@ -53,7 +53,7 @@ class TaskController {
 
     } catch (error) {
 
-      res.status(401).json({ error: error })
+      res.status(401).json({ error })
     }
 
   }
@@ -65,7 +65,7 @@ class TaskController {
       const { id_task } = req.params
       
       await updateSchema.validate(req.body)
-      await allSchemaParams.validate(id_task)
+      await updateSchemaParams.validate(id_task)
       
       const resultado = taskService.updateService(req.body, id_task)
   
@@ -77,7 +77,7 @@ class TaskController {
       
     } catch (error) {
 
-      res.status(401).json({error: error})
+      res.status(401).json({error})
     }
   
   }
@@ -86,16 +86,15 @@ class TaskController {
 
     const { id_task } = req.params
     
-    await deleteSchema.validate(req.params)
-    await allSchemaParams.validate(id_task)
-
     try {
       
+      await deleteSchema.validate(id_task)
+
       const result = taskService.delete(id_task)
       res.status(204).json(result)
 
     } catch (error) {
-      
+
       res.status(401).json({error: error})
       
     }

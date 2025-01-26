@@ -36,6 +36,6 @@ export const updateSchema = object().shape ({
 
 })
 
-export const allSchemaParams = string().required().uuid()
+export const updateSchemaParams = string().required().uuid()
 
-export const deleteSchema = object().shape({})
+export const deleteSchema = string().required().uuid()
