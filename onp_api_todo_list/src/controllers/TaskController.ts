@@ -1,7 +1,8 @@
+import {v4 as uuidv4} from 'uuid';
 import { Request, Response } from 'express';
 import { TaskService } from '../services/TaskService';
+import { multer } from ''
 import { getSchema, getByIdSchema, addSchema, updateSchema, updateSchemaParams, deleteSchema } from '../schemas/TaskSchema';  
-import {v4 as uuidv4} from 'uuid';
 
 const taskService = new TaskService()
 
