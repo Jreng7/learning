@@ -11,7 +11,7 @@ export const getSchema = object().shape({
 })
 
 export const getByIdSchema = object().shape({
-  id_task: string().required()
+  id_task: string().required().uuid()
 })
 
 export const addSchema = object().shape({
