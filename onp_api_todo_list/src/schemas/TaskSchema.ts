@@ -27,10 +27,15 @@ export const addSchema = object().shape({
   })
 })
 
-export const updateSchema = object().shape({
+export const updateSchema = object().shape ({
   id: string().required("Item obrigatório"),
   description: string().required("Item obrigatório"),
   data: string().required("Item obrigatório"),
-  status: string().required("Item obrigatório"),
-  id_task: string()
+  status: string().required("Item obrigatório").test('isValid', 'Status inválido', (status) => {
+    return status === 'completed' || status === 'in_progress'; })
+
 })
+
+export const allSchemaParams = string().required().uuid()
+
+export const deleteSchema = object().shape({})
