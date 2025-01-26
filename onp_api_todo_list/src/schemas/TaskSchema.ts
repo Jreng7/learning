@@ -10,3 +10,13 @@ export const getSchema = object().shape({
   })
 })
 
+export const getByIdSchema = object().shape({
+  id_task: string().required()
+})
+
+export const getAddSchema = object().shape({
+  id: string().required(),
+  description: string().required(),
+  data: string().required(),
+  status: string().required()
+})

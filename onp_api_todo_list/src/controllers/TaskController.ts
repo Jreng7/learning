@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { TaskService } from '../services/TaskService'
-import { getSchema } from '../schemas/TaskSchema'
+import { getSchema, getByIdSchema } from '../schemas/TaskSchema'
 
 const taskService = new TaskService()
 
@@ -26,16 +26,19 @@ class TaskController {
   }
 
   // Metodo GET por ID - Lista apenas uma tarefa.
-  getById(req: Request, res: Response){
+  async getById(req: Request, res: Response){
  
     const { id_task } = req.params;
 
-    if ( id_task ) {
-      
+    try {
+
+      await getByIdSchema.validate(req.params)
+
       const result = taskService.getById(id_task)
       res.json(result) 
 
-    } else {
+    } catch (error){
+
       res.status(401).json({error: "Sorry, cant find that, case id_task is invalid."})
     }
     
@@ -46,17 +49,13 @@ class TaskController {
 
     const { id, description, data, status } = req.body
 
-    if (id && description && data && status) {
+    // if ( status === "completed" || status === "in_progress" ) 
 
-      if ( status === "completed" || status === "in_progress" ) {
-        const result = taskService.addService(req.body)
-        res.json(result).status(201)
-      } else {
-        res.json({error: "Status incorrect"})
-      }
-
-    } else {
-      res.status(401).json({error: "Sorry, cant find that result"})
+    try {
+      const result = taskService.addService(req.body)
+      res.status(201).json(result)
+    } catch (error) {
+      res.status(401).json({ error: error })
     }
 
   }
