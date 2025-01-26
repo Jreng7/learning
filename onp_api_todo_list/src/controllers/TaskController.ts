@@ -1,12 +1,11 @@
 import { Request, Response } from 'express'
 import { TaskService } from '../services/TaskService'
-import { getSchema, getByIdSchema, getAddSchema } from '../schemas/TaskSchema'
+import { getSchema, getByIdSchema, addSchema, updateSchema } from '../schemas/TaskSchema'
 
 const taskService = new TaskService()
 
 class TaskController {
 
-  // Metodo GET - Listar as Tasks completadas.
   async get(req: Request, res: Response){
 
     const { status } = req.query
@@ -25,7 +24,6 @@ class TaskController {
 
   }
 
-  // Metodo GET por ID - Lista apenas uma tarefa.
   async getById(req: Request, res: Response){
  
     const { id_task } = req.params;
@@ -44,51 +42,46 @@ class TaskController {
     
   }
 
-  // Metodo POST - Inserir Tasks
   async add(req: Request, res: Response) {
 
     
     try {
 
-      await getAddSchema.validate()
-
+      await addSchema.validate(req.body)
       const result = taskService.addService(req.body)
       res.status(201).json(result)
 
     } catch (error) {
 
       res.status(401).json({ error: error })
-      
     }
 
   }
 
-  // Metodo PUT - Alterar Tasks
-  update(req: Request, res: Response){
+  async update(req: Request, res: Response){
 
-    const { id, description, data, status } = req.body
+
     const { id_task } = req.params
 
-    if ( id && description && data && status && id_task ) {
-
-      if( status === "in_progress" || status === "completed") {
-
-        const resultado = taskService.updateService(req.body, id_task)
-
-        if ( Object.keys(resultado).length > 0 ) {
-          res.json(resultado)
-        } else {
-          res.status(404).json({error: "Task not found"})
-        }
-
-      } else {
-        res.json({error: "Invalid status"})
-      }
-
-    } else {
-      res.status(401).json({error: "Não encontrado"})
+    try {
+      
+    } catch (error) {
+      res.status(401).json({error: error})
     }
 
+    // if ( id && description && data && status && id_task )
+
+      // if( status === "in_progress" || status === "completed")
+
+      const resultado = taskService.updateService(req.body, id_task)
+
+      if ( Object.keys(resultado).length > 0 ) {
+        res.json(resultado)
+      } else {
+        res.status(404).json({error: "Task not found"})
+      }
+
+  
   }
 
   deleteService(req: Request, res: Response){
