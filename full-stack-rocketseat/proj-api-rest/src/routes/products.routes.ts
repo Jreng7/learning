@@ -1,19 +1,15 @@
-import { Router, Request, Response } from 'express'
+import { Router } from 'express'
 import { myMiddleware } from '../middlewares/myMiddleware'
+import { ProductsController } from '../controllers/ProductsController'
 
 
-const productsRoutes = Router()
+export const productsRoutes = Router()
+const productsController = new ProductsController()
 
 
 // server.use(myMiddleware)  Middleware Global (Aplica para todas as rotas abaixo dele.)
-productsRoutes.get('/', (request: Request, response: Response) => {
-  const { page, limit } = request.query
-  response.send(`As query params são "${page}" e "${limit}"`)
-})
 
-productsRoutes.post('/', myMiddleware, (request: Request, response: Response) => {
-  const { name, price } = request.body
-  response.status(201).json({produto: name, preco: price, user_id: request.user_id})
-})
+productsRoutes.get('/', productsController.getAll)
+productsRoutes.post('/', myMiddleware, productsController.create)
 
-export { productsRoutes }
+
