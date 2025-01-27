@@ -12,7 +12,7 @@ server.get('/products', (request, response) => {
   response.send(`As query params são "${page}" e "${limit}"`)
 })
 
-server.post('/products', (request, response) => {
+server.post('/products', myMiddleware ,(request, response) => {
   const { name, price } = request.body
   response.status(201).json({produto: name, preco: price})
 })
