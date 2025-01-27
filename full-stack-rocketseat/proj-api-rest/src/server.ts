@@ -4,4 +4,4 @@ function sum(a: number, b: number): number {
 
 const result: number = sum(9, 2)
 
-console.log("Resultado da soma" + result)
+console.log("Resultado da soma " + result) 

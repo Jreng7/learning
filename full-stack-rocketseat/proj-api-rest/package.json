@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Criando API REST com node.js",
   "main": "src/server.ts",
-  "scripts": {},
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
   "author": "Josué Ribeiro",
   "license": "MIT",
   "devDependencies": {
