@@ -1,10 +1,12 @@
 import express from 'express'
+import { myMiddleware } from './middlewares/myMiddleware'
 
 
 const server = express()
 server.use(express.json())
 
 
+// server.use(myMiddleware)  Middleware Global (Aplica para todas as rotas abaixo dele.)
 server.get('/products', (request, response) => {
   const { page, limit } = request.query
   response.send(`As query params são "${page}" e "${limit}"`)
