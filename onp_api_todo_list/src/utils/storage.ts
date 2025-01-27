@@ -5,9 +5,9 @@ export const storage = multer.diskStorage({
     callback(null, 'upload/')
   },
   filename: function(req, file, callback){
-    const extension = file.originalname.split('.')
-    callback(null, `${file.filename} ${Date.now()}`)
+    const splitExtension = file.originalname.split('.')
+    const extension = `.${splitExtension[1]}`
+    callback(null, `${splitExtension[0]} ${Date.now()}${extension}`)
   }
-
 
 })
