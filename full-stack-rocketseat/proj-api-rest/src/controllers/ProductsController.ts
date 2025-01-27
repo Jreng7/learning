@@ -9,6 +9,8 @@
 
 
 import { Request, Response } from 'express'
+import { AppError } from '../utils/AppError'
+import { z } from 'zod'
 
 
 export class ProductsController {
@@ -25,9 +27,12 @@ export class ProductsController {
 
     const { name, price } = request.body
 
+    if ( !name || !price ) {
+      throw new AppError("Nome e Preço do produto são obrigatórios!")
+    }
 
-    throw new Error("Erro de exemplo")
-
+    // throw new Error("Erro de exemplo")
+    //throw new AppError("Erro de exemplo", 401)
 
     response.status(201).json({produto: name, preco: price, user_id: request.user_id})
     

@@ -4,10 +4,10 @@ export class AppError {
   message: string
   statusCode: number
 
-  constructor(mensagem: string, codigoStatus: number = 400){
+  constructor(message: string, statusCode: number = 400){
 
-    this.message = mensagem
-    this.statusCode = codigoStatus
+    this.message = message
+    this.statusCode = statusCode
     
   }
 
