@@ -9,6 +9,7 @@
   "author": "Josué Ribeiro",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/node": "^20.14.12",
     "tsx": "4.16.2",
     "typescript": "^5.5.4"
