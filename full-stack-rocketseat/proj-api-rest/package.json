@@ -2,12 +2,12 @@
   "name": "proj-api-rest",
   "version": "1.0.0",
   "description": "Criando API REST com node.js",
-  "main": "src/server.js",
+  "main": "src/server.ts",
   "scripts": {},
   "author": "Josué Ribeiro",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "20.14.12",
-    "typescript": "5.5.4"
+    "@types/node": "^20.14.12",
+    "typescript": "^5.5.4"
   }
 }
