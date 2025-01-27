@@ -14,7 +14,7 @@ server.get('/products', (request, response) => {
 
 server.post('/products', myMiddleware ,(request, response) => {
   const { name, price } = request.body
-  response.status(201).json({produto: name, preco: price})
+  response.status(201).json({produto: name, preco: price, user_id: request.user_id})
 })
 
 
