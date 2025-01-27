@@ -1,6 +1,8 @@
 import express from 'express'
 
+
 const server = express()
+server.use(express.json())
 
 
 server.get('/products', (request, response) => {
@@ -8,12 +10,10 @@ server.get('/products', (request, response) => {
   response.send(`As query params são "${page}" e "${limit}"`)
 })
 
-
 server.post('/products', (request, response) => {
-  
+  const { name, price } = request.body
+  response.status(201).json({produto: name, preco: price})
 })
-
-
 
 
 const PORT = 3333
