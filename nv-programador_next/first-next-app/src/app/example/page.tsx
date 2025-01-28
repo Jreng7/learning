@@ -12,7 +12,9 @@ export function Example(){
     setCor("red")
   }
 
-  return(
-    
+  return (
+    <div>
+      <ButtonChatOnline clicou={() => alertar()}/>
+    </div>
   )
 }
