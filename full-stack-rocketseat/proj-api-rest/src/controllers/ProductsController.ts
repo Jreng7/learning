@@ -25,11 +25,20 @@ export class ProductsController {
 
   create(request: Request, response: Response){
 
-    const { name, price } = request.body
+    const bodySchema = z.object({
 
-    if ( !name || !price ) {
-      throw new AppError("Nome e Preço do produto são obrigatórios!")
-    }
+      name: z.string(),
+      price: z.number()
+
+    })
+
+
+    const { name, price } = bodySchema.parse(request.body)
+
+
+    // if ( !name || !price ) {
+    //   throw new AppError("Nome e Preço do produto são obrigatórios!")
+    // }
 
     // throw new Error("Erro de exemplo")
     //throw new AppError("Erro de exemplo", 401)
