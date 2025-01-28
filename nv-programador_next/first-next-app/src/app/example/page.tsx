@@ -9,9 +9,9 @@ export function Example(){
   return (
 
     <div>
-      <input type="email" />
+      <input type="email" onChange={(e) => setEmail(e.target.value)}/>
     </div>
 
-  )
+  ) 
 
 } 
