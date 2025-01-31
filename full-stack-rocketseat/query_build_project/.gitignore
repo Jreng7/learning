@@ -134,3 +134,13 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Banco de dados SQLite (e arquivos temporários)
+*.db
+*.db3
+*.sqlite
+*.sqlite-journal
+*-journal
+
+# Configuração local do Knex (se houver)
+knexfile.local.*
