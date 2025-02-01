@@ -12,7 +12,7 @@ server.post("/courses", async (request: Request, response: Response) => {
 
   await knex("courses").insert({ name })
 
-  response.status(201).json()
+  return response.status(201).json()
 })
 
 
@@ -20,17 +20,30 @@ server.get("/courses", async (request: Request, response: Response) => {
 
   const courses = await knex("courses").select().orderBy("name")
 
-  response.json({ courses })
+  return response.json({ courses })
 })
 
 
-server.put("/courses", async (request: Request, response: Response) => {
+server.put("/courses/:id", async (request: Request, response: Response) => {
 
-  const courses = await knex("courses").select().orderBy("name")
+  const { id } = request.params
+  const { name } = request.body
 
-  response.json({ courses })
+  await knex("courses").update({ name }).where({ id })
+
+  return response.json()
 })
 
+
+server.delete("/courses/:id", async (request: Request, response: Response) => {
+
+  const { id } = request.params
+
+  await knex("courses").delete().where({ id })
+
+  return response.status(204).json()
+
+})
 
 
 server.listen(3333, () => console.log(`Ok! Server is running on port 3333`))
