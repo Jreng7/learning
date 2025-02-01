@@ -6,6 +6,6 @@ export default {
   useNullAsDefault: true,
   migrations: {
     extensions: "ts",
-    directory: ""
+    directory: "./src/database/migrations"
   }
 }
