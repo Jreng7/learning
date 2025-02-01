@@ -4,4 +4,7 @@ export default {
     filename: "./src/database/database.db"
   },
   useNullAsDefault: true,
+  migrations: {
+    
+  }
 }
