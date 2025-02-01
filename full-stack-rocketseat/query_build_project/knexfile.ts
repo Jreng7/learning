@@ -1,6 +1,6 @@
 export default {
   client: "sqlite3",
   connection: {
-    filename: "./src/database"
+    filename: "./src/database/database.db"
   }
 }
