@@ -1,4 +1,6 @@
 export default {
   client: "sqlite3",
-  connection: .
+  connection: {
+    filename: ""
+  }
 }
