@@ -21,8 +21,17 @@ const server = createServer((req, res) => {
 
     res.write('<h1>TreinaWeb Sobre</h1>')
     res.end()
+
   } else if (url === '/contato') {
+
     res.write('<h1>TreinaWeb Contato</h1>')
+    res.end()
+
+  } else {
+
+    res.write('<h1>Treina Web, nenhuma rota encontrada, veja mais em </h1><a href="/sobre">Sobre</a> ou <a href="/contato">Contato</a>')
+    res.end()
+
   }
 
 })
