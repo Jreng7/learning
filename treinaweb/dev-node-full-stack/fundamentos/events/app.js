@@ -1,5 +1,4 @@
-import EventEmitter from 'node:events'
+import EmmitEvents from 'node:events'
 
-let emitter = new EventEmitter()
+const emitter = new EmmitEvents()
 
-emitter.on()
