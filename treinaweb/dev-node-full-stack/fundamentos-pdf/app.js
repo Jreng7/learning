@@ -5,5 +5,5 @@ import pdf from 'html-pdf'
 
 
 const server = createServer((req, res) => {
-  
+  let html = fs.readFileSync('./index.html')
 })
