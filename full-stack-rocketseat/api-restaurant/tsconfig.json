@@ -16,3 +16,26 @@
 
   }
 } 
+
+
+
+
+
+// ==== "module": "Node16" ==== ( Isso define como o TypeScript deve tratar os módulos no Node.js 16+. )
+
+// Se você usar "module": "Node16", o TypeScript seguirá as regras do Node.js para módulos:
+// Se o arquivo for .ts e estiver no "type": "module" do package.json, ele usará ES Modules (import/export).
+// Se for um .ts sem "type": "module", ele usará CommonJS (require/module.exports).
+// O TypeScript respeita a extensão .cjs (CommonJS) e .mjs (ES Module).
+// Em resumo, isso diz ao TypeScript para seguir as regras modernas do Node.js para diferenciar entre ES Modules e CommonJS.
+
+
+
+// ==== "esModuleInterop": true" ==== ( Isso apenas torna mais fácil importar módulos CommonJS em projetos TypeScript com ES Modules. )
+
+// "import express from "express" isso já não é comum?  Sim, hoje em dia parece comum escrever import express from "express", mas o Express 
+// (e muitos outros pacotes do Node.js) ainda usam CommonJS internamente, ou seja, eles exportam assim: "module.exports = express;"
+// Se você tentar importar normalmente com ES Modules (import express from "express";) sem "esModuleInterop": true, o TypeScript reclamaria, porque tecnicamente o Express não está exportando um default export.
+// Ou seja, sem "esModuleInterop": true, você teria que importar assim: import * as express from "express"; "Obrigatório sem esModuleInterop"
+// O "esModuleInterop": true faz com que o TypeScript engane o sistema e trate module.exports = express; como se fosse export default express;. Isso permite que você use import express from "express"; sem erro.
+// Então, apesar de parecer comum, isso só funciona sem problemas no TypeScript por causa do "esModuleInterop": true.
