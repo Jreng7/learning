@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Define qual versão do JavaScript o TypeScript deve gerar ao compilar os arquivos .ts.
+    "lib": ["ES2023"] //  Define quais bibliotecas e tipos o TypeScript usará durante o desenvolvimento. 
+  }
+} 
