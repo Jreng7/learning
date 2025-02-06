@@ -11,14 +11,18 @@
     "module": "Node16",
     "esModuleInterop": true, // Facilita a importação de módulos CommonJS (require) como se fossem ES Modules (import).
     "forceConsistentCasingInFileNames": true, // consistência da capitalização (Independente de ser camelCase ou PascalCase)
+   
     "strict": true, // Ativa todas as regras mais rigorosas do TypeScript para melhorar a segurança e evitar erros.
-
+    
+    "skipLibCheck": true // Faz com que o TypeScript ignore erros de tipos dentro dos arquivos de bibliotecas (.d.ts).
+    // Quando usar?
+    // Se você está tendo problemas com erros em pacotes de terceiros (como do node_modules), ativar isso pode ajudar.
+    // Se você quer compilar mais rápido, pois o TypeScript não precisará verificar esses arquivos.
+    // Existe desvantagem?
+    // Sim! Pode esconder erros que poderiam afetar seu código. Se possível, o ideal é manter false e resolver os erros de tipo corretamente.
 
   }
 } 
-
-
-
 
 
 // ==== "module": "Node16" ==== ( Isso define como o TypeScript deve tratar os módulos no Node.js 16+. )
