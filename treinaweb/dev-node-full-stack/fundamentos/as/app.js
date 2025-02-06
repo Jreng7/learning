@@ -1,34 +1,36 @@
 import fs from 'node:fs'
 
-console.time('Time Assíncrono')
+
+// fs.writeFile('meu_arquivo.txt', 'TreinaWeb', (err) => {
+  
+//   if(err) {
+//     return console.error('Erro ao escrever o arquivo', err)
+//   }
+  
+//   console.log('Arquivo escrito com sucesso!')
+  
+// })
 
 
-fs.writeFile('meu_arquivo.txt', 'TreinaWeb', (err) => {
+// console.time('Time Assíncrono')
 
-  if(err) {
-    return console.error('Erro ao escrever o arquivo', err)
-  }
+// let counter = 0
 
-  console.log('Arquivo escrito com sucesso!')
 
-})
+// for(let i = 0; i < 20; i++){
 
-let counter = 0
+//   fs.readFile('meu_arquivo.txt', (err, data) => {
 
-for(let i = 0; i < 20; i++){
+//     if(err) {
+//       return console.error(err)
+//     }
+//     counter++
+//     console.log('O código do meu_arquivo.txt é: ' + data.toString())
 
-  fs.readFile('meu_arquivo.txt', (err, data) => {
+//     if(counter === 20) {
+//       console.timeEnd('Time Assíncrono')
+//     }
 
-    if(err) {
-      return console.error(err)
-    }
-    counter++
-    console.log('Assíncrono' + data.toString())
+//   })
 
-    if(counter === 20) {
-      console.timeEnd('Time Assíncrono')
-    }
-
-  })
-
-}
+// } // Time Assíncrono: 8.899ms
