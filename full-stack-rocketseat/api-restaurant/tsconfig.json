@@ -1,6 +1,18 @@
 {
   "compilerOptions": {
+
     "target": "ES2022", // Define qual versão do JavaScript o TypeScript deve gerar ao compilar os arquivos .ts.
-    "lib": ["ES2023"] //  Define quais bibliotecas e tipos o TypeScript usará durante o desenvolvimento. 
+    "lib": ["ES2023"], //  Define quais bibliotecas e tipos o TypeScript usará durante o desenvolvimento. 
+
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    "module": "Node16",
+    "esModuleInterop": true, // Facilita a importação de módulos CommonJS (require) como se fossem ES Modules (import).
+    "forceConsistentCasingInFileNames": true, // consistência da capitalização (Independente de ser camelCase ou PascalCase)
+    "strict": true, // Ativa todas as regras mais rigorosas do TypeScript para melhorar a segurança e evitar erros.
+
+
   }
 } 
