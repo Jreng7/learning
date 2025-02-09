@@ -15,6 +15,16 @@ export class ProductController {
     }
 
   }
+
+  async create(request: Request, response: Response, next: NextFunction){
+
+    try {
+      
+    } catch (error) {
+      
+    }
+
+  }
 }
 
 
