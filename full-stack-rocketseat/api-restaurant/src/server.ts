@@ -10,7 +10,6 @@ const server = express()
 server.use(express.json())
 server.use(routes)
 server.use(errorHandler)
-server.use(knex)
 
 server.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`)
