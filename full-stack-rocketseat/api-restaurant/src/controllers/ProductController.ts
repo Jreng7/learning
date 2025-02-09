@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
-import { AppError } from '@/utils/AppError'
+import { z } from 'zod'
+
 
 export class ProductController {
 
@@ -19,9 +20,9 @@ export class ProductController {
 
     try {
       
-      const { name, price } = request.body
+      
 
-      return response.status(201).json({ message: name, price })
+      return response.status(201).json({ name, price })
       
     } catch (error) {
       next(error)
