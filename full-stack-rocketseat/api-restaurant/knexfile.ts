@@ -4,7 +4,13 @@ export default {
   connection: {
     filename: "./src/database/database.db"
   },
-  useNullasDefault: true,
+  pool: {
+    afterCreate: (connection: any, done: any) => {
+      connection.run("PRAGMA foreing_keys = ON")
+      done()
+    }
+  },  
+  useNullAsDefault: true,
 
   migrations: {
     extensions: "ts",

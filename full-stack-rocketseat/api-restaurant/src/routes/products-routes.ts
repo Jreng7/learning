@@ -3,8 +3,9 @@ import { ProductController } from '@/controllers/ProductController.js'
 
 
 export const productsRoutes = Router()
+
 const productController = new ProductController()
 
 
-productsRoutes.get('/', productController.index)
+productsRoutes.get('/', productController.getAll)
 
