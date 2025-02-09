@@ -10,7 +10,9 @@ export function errorHandler(error: any, request: Request, response: Response, _
   }
 
   if (error instanceof ZodError) {
-    
+    return response
+      .status(400)
+      .json({ message: "Validation error", issues: error.format() })
   }
 
 
