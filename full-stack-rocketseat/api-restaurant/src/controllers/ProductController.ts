@@ -8,7 +8,12 @@ export class ProductController {
   async getAll(request: Request, response: Response, next: NextFunction){
 
     try {
-      return response.json({ message: "Ok"})
+
+      const { name } = request.query
+
+      const products = await knex<ProductRepository>("products").select().whereLike("name", `%${name ?? ""}%`)
+
+      return response.json({ products })
 
     } catch (error) {
 
