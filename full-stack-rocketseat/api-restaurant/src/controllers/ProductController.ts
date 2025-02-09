@@ -6,7 +6,6 @@ export class ProductController {
   async getAll(request: Request, response: Response, next: NextFunction){
 
     try {
-      
       return response.json({ message: "Ok"})
 
     } catch (error) {
@@ -20,8 +19,12 @@ export class ProductController {
 
     try {
       
-    } catch (error) {
+      const { name, price } = request.body
+
+      return response.status(201).json({ message: name, price })
       
+    } catch (error) {
+      next(error)
     }
 
   }
