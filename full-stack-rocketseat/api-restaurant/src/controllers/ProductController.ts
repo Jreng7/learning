@@ -29,7 +29,7 @@ export class ProductController {
       
       const { name, price } = bodySchema.parse(request.body)
 
-      await knex("products").insert()
+      await knex<ProductRepository>("products").insert({ name, price })
 
       return response.status(201).json({ name, price })
       
