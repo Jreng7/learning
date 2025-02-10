@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
+import { AppError } from '@/utils/AppError'
 import { knex } from '@/database/knex'
 import { z } from 'zod'
 
@@ -79,6 +80,10 @@ export class ProductController {
         .parse(request.params.id)
 
       const product = await knex<ProductRepository>("products").select().where({ id }).first()
+
+      if (!product) {
+        throw new AppError("Product not found", 401)
+      }
       
       await knex<ProductRepository>("products").delete().where({ id })
 
