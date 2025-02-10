@@ -77,6 +77,8 @@ export class ProductController {
         .transform((value) => Number(value))
         .refine((value) => !isNaN(value), {message: "id must be a number"})
         .parse(request.params.id)
+
+      const product = await knex<ProductRepository>("products").select().where({ id }).first()
       
       await knex<ProductRepository>("products").delete().where({ id })
 
