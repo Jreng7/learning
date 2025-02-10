@@ -6,23 +6,35 @@ import { knex } from '@/database/knex'
 export class TablesController {
 
   async index(request: Request, response: Response, next: NextFunction){
-    
+    try {
+      
+    } catch (error) {
+      next(error)
+    }
   }
 
   async create(request: Request, response: Response, next: NextFunction){
     try {
       
     } catch (error) {
-      
+      next(error)
     }
   }
 
   async update(request: Request, response: Response, next: NextFunction){
-    
+    try {
+      
+    } catch (error) {
+      next(error)
+    }
   }
 
   async remove(request: Request, response: Response, next: NextFunction){
-    
+    try {
+      
+    } catch (error) {
+      next(error)
+    }
   }
 
 }
