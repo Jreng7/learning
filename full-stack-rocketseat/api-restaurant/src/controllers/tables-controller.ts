@@ -6,11 +6,15 @@ import { knex } from '@/database/knex'
 export class TablesController {
 
   async index(request: Request, response: Response, next: NextFunction){
-  
+    
   }
 
   async create(request: Request, response: Response, next: NextFunction){
-    
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   async update(request: Request, response: Response, next: NextFunction){
