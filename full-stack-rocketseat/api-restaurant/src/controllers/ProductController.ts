@@ -43,6 +43,14 @@ export class ProductController {
     }
 
   }
+
+  async update(request: Request, response: Response, next: NextFunction){
+    try {
+      
+    } catch (error) {
+      next(error)
+    }
+  }
 }
 
 
