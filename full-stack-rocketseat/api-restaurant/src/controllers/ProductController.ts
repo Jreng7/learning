@@ -45,11 +45,25 @@ export class ProductController {
   }
 
   async update(request: Request, response: Response, next: NextFunction){
+
     try {
 
-      const id = z.string().transform( (value) => Number(value) ).refine((value) => !isNaN(value), {message: "id must be a number"})
+      const id = z.string()
+        .transform( (value) => Number(value) )
+        .refine((value) => !isNaN(value), {message: "id must be a number"})
+        .parse(request.params.id)
+
+      const bodyShema = z.object({
+        name: z.string().trim().min(6),
+        price: z.number().gt(0)
+      })
+
+      const { name, price } = bodyShema.parse(request.body)
+
+      
 
       return response.json({ message: "update" })
+
     } catch (error) {
       next(error)
     }
