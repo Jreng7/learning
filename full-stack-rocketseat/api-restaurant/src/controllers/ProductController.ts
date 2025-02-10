@@ -61,6 +61,8 @@ export class ProductController {
 
       const { name, price } = bodyShema.parse(request.body)
 
+      const product = await knex<ProductRepository>("products").select().where({ id }).first()
+
       await knex<ProductRepository>("products").update({ name, price, updated_at: knex.fn.now()}).where({ id })
 
       return response.json()
