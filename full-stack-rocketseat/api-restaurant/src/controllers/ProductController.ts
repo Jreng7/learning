@@ -46,7 +46,10 @@ export class ProductController {
 
   async update(request: Request, response: Response, next: NextFunction){
     try {
-      
+
+      const id = z.string().transform( (value) => Number(value) ).refine((value) => !isNaN(value), {message: "id must be a number"})
+
+      return response.json({ message: "update" })
     } catch (error) {
       next(error)
     }

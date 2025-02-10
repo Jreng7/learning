@@ -9,4 +9,4 @@ const productController = new ProductController()
 
 productsRoutes.get('/', productController.getAll)
 productsRoutes.post('/', productController.create)
-
+productsRoutes.put('/:id', productController.update)
