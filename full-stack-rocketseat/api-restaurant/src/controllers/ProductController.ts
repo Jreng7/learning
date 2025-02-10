@@ -63,6 +63,10 @@ export class ProductController {
 
       const product = await knex<ProductRepository>("products").select().where({ id }).first()
 
+      if (!product){
+        throw new AppError("Product not found", 400)
+      }
+
       await knex<ProductRepository>("products").update({ name, price, updated_at: knex.fn.now()}).where({ id })
 
       return response.json()
@@ -84,7 +88,7 @@ export class ProductController {
       const product = await knex<ProductRepository>("products").select().where({ id }).first()
 
       if (!product) {
-        throw new AppError("Product not found", 401)
+        throw new AppError("Product not found", 400)
       }
       
       await knex<ProductRepository>("products").delete().where({ id })
@@ -96,8 +100,6 @@ export class ProductController {
     }
 
   }
-
-
 
 }
 
