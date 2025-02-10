@@ -60,14 +60,36 @@ export class ProductController {
 
       const { name, price } = bodyShema.parse(request.body)
 
-      
+      await knex<ProductRepository>("products").update({ name, price, updated_at: knex.fn.now()}).where({ id })
 
-      return response.json({ message: "update" })
+      return response.json()
 
     } catch (error) {
       next(error)
     }
   }
+
+  async delete(request: Request, response: Response, next: NextFunction){
+
+    try {
+      
+      const id = z.string()
+        .transform((value) => Number(value))
+        .refine((value) => !isNaN(value), {message: "id must be a number"})
+        .parse(request.params.id)
+      
+      await knex<ProductRepository>("products").delete().where({ id })
+
+      return response.status(204).json()
+
+    } catch (error) {
+      next(error)
+    }
+
+  }
+
+
+
 }
 
 
