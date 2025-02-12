@@ -4,8 +4,9 @@ import { initializeApp } from "firebase-admin/app";
 import { routes } from "./routes/routes";
 
 initializeApp();
-const server= express();
+const server = express();
 
+server.use(express.json())
 server.use(routes)
 
 server.listen(3000, () => {

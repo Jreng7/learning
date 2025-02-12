@@ -64,10 +64,10 @@ export class UsersController {
 
   // Metodo delete
   static async deleteUserById(req: Request, res: Response){
-    let userId = req.params.id
 
-    await getFirestore().collection("users").doc(userId).delete()
-
+    let { id } = req.params
+    
+    await getFirestore().collection("users").doc(id).delete()
     res.status(204).end()
   }
   
