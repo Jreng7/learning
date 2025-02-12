@@ -50,10 +50,10 @@ export class UsersController {
 
   // metodo put - atualizar usuário
   static updateUserById(req: Request, res: Response){
-    let userId = req.params.id
+    let { id } = req.params
     let user = req.body as User;
    
-    getFirestore().collection("users").doc(userId).set({
+    getFirestore().collection("users").doc(id).set({
       nome: user.nome,
       email: user.email
     })

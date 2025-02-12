@@ -6,7 +6,7 @@ import { routes } from "./routes/routes";
 initializeApp();
 const server= express();
 
-routes(server);
+server.use(routes)
 
 server.listen(3000, () => {
   console.log("Server is running on port 3000");

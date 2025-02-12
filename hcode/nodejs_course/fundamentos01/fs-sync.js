@@ -1,3 +1,4 @@
 const fs = require("node:fs")
 
-const dados = fs.readFileSync
+const dados = fs.readFileSync("texto.txt")
+
