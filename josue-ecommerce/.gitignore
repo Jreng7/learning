@@ -1,5 +1,4 @@
-firebase-adminsdk.json
-
+firebase.json
 # Dependências
 node_modules/
 
