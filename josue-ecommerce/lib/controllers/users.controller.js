@@ -15,11 +15,8 @@ class UsersController {
     // metodo get - Pegar todos os usuários
     static getAllUsers(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const snapshot = yield (0, firestore_1.getFirestore)().collection("users").get();
-            const usersdoc = snapshot.docs.map(refDoc => {
-                return Object.assign({ id: refDoc.id }, refDoc.data());
-            });
-            res.send(usersdoc);
+            const usuarios = yield (0, firestore_1.getFirestore)().collection("users").get();
+            res.json(usuarios);
         });
     }
     // metodo get - Pegar usuário pelo Id

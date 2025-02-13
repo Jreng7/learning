@@ -12,15 +12,12 @@ export class UsersController {
 
 
   // metodo get - Pegar todos os usuários
-  static async getAllUsers(req: Request, res: Response){
-    const snapshot = await getFirestore().collection("users").get()
-    const usersdoc = snapshot.docs.map(refDoc => {
-      return {
-        id: refDoc.id,
-        ...refDoc.data()
-      }
-    });
-    res.send(usersdoc)
+  static async getAllUsers(request: Request, response: Response){
+
+    const usuarios = await getFirestore().collection("users").get()
+
+    return response.json(usuarios)
+
   }
 
 
