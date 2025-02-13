@@ -12,7 +12,7 @@ export class UsersController {
 
 
   // metodo get - Pegar todos os usuários
-  async getAllUsers(req: Request, res: Response){
+  static async getAllUsers(req: Request, res: Response){
     const snapshot = await getFirestore().collection("users").get()
     const usersdoc = snapshot.docs.map(refDoc => {
       return {
@@ -25,7 +25,7 @@ export class UsersController {
 
 
   // metodo get - Pegar usuário pelo Id
-  async getUserById(req: Request, res: Response){
+  static async getUserById(req: Request, res: Response){
     let userId = req.params.id
     const doc = await getFirestore().collection("users").doc(userId).get()
     let user = {
@@ -37,7 +37,7 @@ export class UsersController {
 
 
   // metodo post - inserir usuaŕios.
-  async insertUser(req: Request, res: Response) {
+  static async insertUser(req: Request, res: Response) {
 
     let user = req.body
     const userSave = await getFirestore().collection("users").add(user)
@@ -49,7 +49,7 @@ export class UsersController {
 
 
   // metodo put - atualizar usuário
-  updateUserById(req: Request, res: Response){
+  static updateUserById(req: Request, res: Response){
     let { id } = req.params
     let user = req.body as User;
    
@@ -63,7 +63,7 @@ export class UsersController {
   
 
   // Metodo delete
-  async deleteUserById(req: Request, res: Response){
+  static async deleteUserById(req: Request, res: Response){
 
     let { id } = req.params
     

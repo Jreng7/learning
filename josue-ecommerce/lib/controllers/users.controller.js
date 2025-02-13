@@ -13,7 +13,7 @@ exports.UsersController = void 0;
 const firestore_1 = require("firebase-admin/firestore");
 class UsersController {
     // metodo get - Pegar todos os usuários
-    getAllUsers(req, res) {
+    static getAllUsers(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const snapshot = yield (0, firestore_1.getFirestore)().collection("users").get();
             const usersdoc = snapshot.docs.map(refDoc => {
@@ -23,7 +23,7 @@ class UsersController {
         });
     }
     // metodo get - Pegar usuário pelo Id
-    getUserById(req, res) {
+    static getUserById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let userId = req.params.id;
             const doc = yield (0, firestore_1.getFirestore)().collection("users").doc(userId).get();
@@ -32,7 +32,7 @@ class UsersController {
         });
     }
     // metodo post - inserir usuaŕios.
-    insertUser(req, res) {
+    static insertUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let user = req.body;
             const userSave = yield (0, firestore_1.getFirestore)().collection("users").add(user);
@@ -42,7 +42,7 @@ class UsersController {
         });
     }
     // metodo put - atualizar usuário
-    updateUserById(req, res) {
+    static updateUserById(req, res) {
         let { id } = req.params;
         let user = req.body;
         (0, firestore_1.getFirestore)().collection("users").doc(id).set({
@@ -52,7 +52,7 @@ class UsersController {
         res.send({ message: "Usuário atualizado com sucesso!" });
     }
     // Metodo delete
-    deleteUserById(req, res) {
+    static deleteUserById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let { id } = req.params;
             yield (0, firestore_1.getFirestore)().collection("users").doc(id).delete();
