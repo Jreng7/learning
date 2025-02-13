@@ -13,7 +13,7 @@ exports.UsersController = void 0;
 const firestore_1 = require("firebase-admin/firestore");
 class UsersController {
     // metodo get - Pegar todos os usuários
-    static getAllUsers(req, res) {
+    getAllUsers(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const snapshot = yield (0, firestore_1.getFirestore)().collection("users").get();
             const usersdoc = snapshot.docs.map(refDoc => {
@@ -23,7 +23,7 @@ class UsersController {
         });
     }
     // metodo get - Pegar usuário pelo Id
-    static getUserById(req, res) {
+    getUserById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let userId = req.params.id;
             const doc = yield (0, firestore_1.getFirestore)().collection("users").doc(userId).get();
@@ -32,7 +32,7 @@ class UsersController {
         });
     }
     // metodo post - inserir usuaŕios.
-    static insertUser(req, res) {
+    insertUser(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             let user = req.body;
             const userSave = yield (0, firestore_1.getFirestore)().collection("users").add(user);
@@ -42,20 +42,20 @@ class UsersController {
         });
     }
     // metodo put - atualizar usuário
-    static updateUserById(req, res) {
-        let userId = req.params.id;
+    updateUserById(req, res) {
+        let { id } = req.params;
         let user = req.body;
-        (0, firestore_1.getFirestore)().collection("users").doc(userId).set({
+        (0, firestore_1.getFirestore)().collection("users").doc(id).set({
             nome: user.nome,
             email: user.email
         });
         res.send({ message: "Usuário atualizado com sucesso!" });
     }
     // Metodo delete
-    static deleteUserById(req, res) {
+    deleteUserById(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            let userId = req.params.id;
-            yield (0, firestore_1.getFirestore)().collection("users").doc(userId).delete();
+            let { id } = req.params;
+            yield (0, firestore_1.getFirestore)().collection("users").doc(id).delete();
             res.status(204).end();
         });
     }
