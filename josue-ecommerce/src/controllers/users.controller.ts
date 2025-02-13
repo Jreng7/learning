@@ -42,9 +42,7 @@ export class UsersController {
     let user = req.body
     const userSave = await getFirestore().collection("users").add(user)
 
-    res.status(201).send({
-      message: `Usuário ${userSave.id} criado com sucesso!`
-    })
+    res.status(201).json({ message: `Usuário ${userSave.id} criado com sucesso!`})
   }
 
 

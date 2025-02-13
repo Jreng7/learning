@@ -36,9 +36,7 @@ class UsersController {
         return __awaiter(this, void 0, void 0, function* () {
             let user = req.body;
             const userSave = yield (0, firestore_1.getFirestore)().collection("users").add(user);
-            res.status(201).send({
-                message: `Usuário ${userSave.id} criado com sucesso!`
-            });
+            res.status(201).json({ message: `Usuário ${userSave.id} criado com sucesso!` });
         });
     }
     // metodo put - atualizar usuário
