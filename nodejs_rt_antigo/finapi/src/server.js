@@ -9,7 +9,9 @@ const host = "127.0.0.1"
 const server = express()
 server.use(express.json())
 
-
+server.post('/account', (request, response) => {
+  
+})
 
 server.listen(port, host, (err) => {
   if(err){
