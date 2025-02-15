@@ -15,7 +15,6 @@ server.use(express.json())
 const customers = []
 
 
-
 // Rota POST - Create User
 server.post('/account', (request, response) => {
   
@@ -44,7 +43,6 @@ server.get('/statement/:cpf', (request, response) => {
   const costumer = customers.find(client => client.cpf === cpf)
 
 })
-
 
 
 
