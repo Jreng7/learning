@@ -35,6 +35,7 @@ server.post('/account', (request, response) => {
 
 })
 
+
 // Metodo GET - Pegar dados bancários de um cliente
 server.get('/statement/:cpf', (request, response) => {
 
@@ -43,7 +44,6 @@ server.get('/statement/:cpf', (request, response) => {
   const costumer = customers.find(client => client.cpf === cpf)
 
 })
-
 
 
 server.listen(port, host, (err) => {
