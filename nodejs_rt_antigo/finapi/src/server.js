@@ -15,6 +15,7 @@ server.use(express.json())
 const customers = []
 
 
+
 // Rota POST - Create User
 server.post('/account', (request, response) => {
   
@@ -34,6 +35,17 @@ server.post('/account', (request, response) => {
   })
 
 })
+
+// Metodo GET - Pegar dados bancários de um cliente
+server.get('/statement/:cpf', (request, response) => {
+
+  const { cpf } = request.params
+
+  const costumer = customers.find(client => client.cpf === cpf)
+
+})
+
+
 
 
 server.listen(port, host, (err) => {
