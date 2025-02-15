@@ -20,17 +20,21 @@ server.post('/account', (request, response) => {
 
   const customerAlreadyExists = customers.some( itemPercorrido => { itemPercorrido.cpf === cpf } ) 
 
+  if (customerAlreadyExists) {
+    return response.status(400).json({ error: "Customer already exists!"})
+  }
+
   const id = uuidv4()
 
   customers.push({
     cpf,
     name,
-    id: uuidv4(),
+    id,
     statement: []
   })
 
-
 })
+
 
 server.listen(port, host, (err) => {
   if(err){
