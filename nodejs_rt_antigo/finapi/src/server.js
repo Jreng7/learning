@@ -11,9 +11,11 @@ const server = express()
 server.use(express.json())
 
 
+// banco de dados 
 const customers = []
 
 
+// Rota POST - Create User
 server.post('/account', (request, response) => {
   
   const { cpf, name } = request.body
@@ -24,12 +26,10 @@ server.post('/account', (request, response) => {
     return response.status(400).json({ error: "Customer already exists!"})
   }
 
-  const id = uuidv4()
-
   customers.push({
     cpf,
     name,
-    id,
+    id: uuidv4(),
     statement: []
   })
 
