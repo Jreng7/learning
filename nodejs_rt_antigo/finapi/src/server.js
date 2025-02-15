@@ -9,8 +9,18 @@ const host = "127.0.0.1"
 const server = express()
 server.use(express.json())
 
+
+const customers = []
+
+
 server.post('/account', (request, response) => {
   
+  const { cpf, name } = request.body
+
+  const customerAlreadyExists = customers.some((item) => {
+    item.cpf === cpf
+    
+  }) 
 })
 
 server.listen(port, host, (err) => {
