@@ -47,6 +47,8 @@ server.get('/statement/:cpf', (request, response) => {
 
   const custumer = customers.find( cliente.cpf === cpf )
 
+  return json(customer.statement)
+
 })
 
 
