@@ -1,7 +1,8 @@
-const express = require('express')
+import express from 'express'
 const { config } = require('dotenv')
 const { v4: uuidv4 } = require('uuid')
 const helmet = require('helmet')
+const path = require('node:path')
 
 config()
 
@@ -11,6 +12,7 @@ const host = "127.0.0.1"
 const server = express()
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
+server.use(express.static(path.join(__dirname, '../public')))
 server.use(helmet())
 
 
