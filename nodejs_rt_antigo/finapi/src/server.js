@@ -5,7 +5,6 @@ const helmet = require('helmet')
 const path = require('node:path')
 
 config()
-
 const port = process.env.PORT || 3000
 const host = "127.0.0.1"
 
@@ -46,7 +45,7 @@ server.get('/statement/:cpf', (request, response) => {
 
   const { cpf } = request.params
 
-  const costumer = customers.find(client => client.cpf === cpf)
+  const costumer = customers.find( cliente.cpf === cpf )
 
 })
 
