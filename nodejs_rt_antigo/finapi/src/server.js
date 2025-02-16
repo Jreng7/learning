@@ -45,7 +45,7 @@ server.get('/statement/:cpf', (request, response) => {
 
   const { cpf } = request.params
 
-  const costumer = customers.find( cliente.cpf === cpf )
+  const custumer = customers.find( cliente.cpf === cpf )
 
 })
 
