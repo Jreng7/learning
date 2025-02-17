@@ -14,11 +14,9 @@ server.use(express.urlencoded({ extended: true }))
 server.use(helmet())
 
 
-// banco de dados 
 const customers = []
 
 
-// Rota POST - Create User
 server.post('/account', (request, response) => {
   
   const { cpf, name } = request.body
@@ -36,15 +34,16 @@ server.post('/account', (request, response) => {
     statement: []
   })
 
+  return response.status(201).send()
+
 })
 
 
-// Metodo GET - Pegar dados bancários de um cliente
-server.get('/statement/:cpf', (request, response) => {
+server.get('/statement', (request, response) => {
 
-  const { cpf } = request.params
+  const { cpf } = request.headers
 
-  const customer = customers.find( cliente.cpf === cpf )
+  const customer = customers.find(cliente => cliente.cpf === cpf )
 
   if (!customer) {  
     return response.status(400).json({ error: "Customer not found"})
