@@ -49,7 +49,7 @@ server.get('/statement', (request, response) => {
     return response.status(400).json({ error: "Customer not found"})
   }
 
-  return json(customer.statement)
+  return response.json(customer.statement)
 
 })
 
