@@ -22,9 +22,7 @@ export class UsersController {
   async showUnique(request: Request, response: Response) {
 
     const { id } = request.params
-
     const uniqueUser = await prisma.user.findUnique({ where: {id} })
-
     return response.json(uniqueUser)
   }
   
