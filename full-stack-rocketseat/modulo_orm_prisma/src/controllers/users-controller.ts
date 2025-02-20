@@ -4,7 +4,7 @@ import { prisma } from "@/database/prisma"
 
 export class UsersController {
 
-  async getUsers(request: Request, response: Response) {
+  async getAllUsers(request: Request, response: Response) {
     const users = await prisma.user.findMany()
     return response.status(200).json(users)
   }
