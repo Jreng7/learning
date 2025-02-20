@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 
-class QuestionsController {
+export class QuestionsController {
+
   async index(request: Request, response: Response) {
     return response.json()
   }
@@ -16,6 +17,6 @@ class QuestionsController {
   async remove(request: Request, response: Response) {
     return response.json()
   }
+  
 }
 
-export { QuestionsController }
