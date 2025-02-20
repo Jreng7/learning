@@ -1,4 +1,5 @@
 import { Request, Response } from "express"
+import { prisma } from "@/database/prisma"
 
 export class UsersController {
 
