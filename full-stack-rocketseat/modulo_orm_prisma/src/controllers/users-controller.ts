@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 
-class UsersController {
+export class UsersController {
+
   async index(request: Request, response: Response) {
     return response.json()
   }
@@ -12,6 +13,6 @@ class UsersController {
   async show(request: Request, response: Response) {
     return response.json()
   }
+  
 }
 
-export { UsersController }
