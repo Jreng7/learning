@@ -12,9 +12,10 @@ export class UsersController {
 
     const { name, email } = request.body
 
-    await prisma.user.create({ data: {} })
+    await prisma.user.create({ data: { name, email } })
 
-    return response.status(201).json()
+    return response.status(201).json({ message: "User successfully created"})
+    
   }
 
   async show(request: Request, response: Response) {
