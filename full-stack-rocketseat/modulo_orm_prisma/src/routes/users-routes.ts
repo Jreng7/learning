@@ -6,5 +6,5 @@ const usersController = new UsersController()
 
 usersRoutes.get("/", usersController.getAllUsers)
 usersRoutes.post("/", usersController.create)
-usersRoutes.get("/:id", usersController.show)
+usersRoutes.get("/:id", usersController.showUnique)
 
