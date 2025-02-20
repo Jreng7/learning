@@ -1,5 +1,4 @@
 import express, { Request, Response, NextFunction } from "express"
-
 import { routes } from "./routes"
 
 const PORT = 3333
