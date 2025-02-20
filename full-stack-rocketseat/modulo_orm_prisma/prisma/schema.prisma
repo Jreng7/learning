@@ -8,9 +8,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model User {     // Aqui o "User" é uma representação
   id String @id @default(uuid())
   name String
   email String @unique
   
+  @@map("user")  // aqui é o nome da tabela que eu quero usar dentro do banco de dados.
 }
