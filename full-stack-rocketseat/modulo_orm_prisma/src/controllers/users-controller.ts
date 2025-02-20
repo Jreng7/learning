@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express"
+import { Request, Response } from "express"
 
 export class UsersController {
 
@@ -6,13 +6,11 @@ export class UsersController {
     return response.json()
   }
 
-  async create(request: Request, response: Response, next: NextFunction) {
-    try {
-      throw new Error("Aqui fica o error.message")
-      return response.status(201).json({ message: "ok"})
-    } catch (error) {
-      next(error)
-    }
+  async create(request: Request, response: Response) {
+
+    throw new Error("Aqui fica o error.message, porém, agora com a biblioteca 'express-async-errors'")
+    return response.status(201).json({ message: "ok"})
+
   }
 
   async show(request: Request, response: Response) {
