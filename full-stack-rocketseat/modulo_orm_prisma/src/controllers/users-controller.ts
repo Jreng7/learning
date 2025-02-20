@@ -7,7 +7,7 @@ export class UsersController {
   }
 
   async create(request: Request, response: Response) {
-    return response.status(201).json({ message: "ok"})
+    return response.status(201).json()
   }
 
   async show(request: Request, response: Response) {
