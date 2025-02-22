@@ -35,7 +35,7 @@ export default class QuestionsController {
 
     await prisma.question.update({ data: { title, content }, where: { id }})
 
-    return response.json()
+    return response.status(201).json({ message: "Questão atualizada com sucesso."})
   }
 
   static async remove(request: Request, response: Response) {
