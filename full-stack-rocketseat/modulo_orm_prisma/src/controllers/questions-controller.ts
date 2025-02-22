@@ -9,13 +9,10 @@ export default class QuestionsController {
 
   static async create(request: Request, response: Response) {
 
-    const { title, content, user_id } = request.body
+    const { title, content, user_id } = request.body // Recebi a requisição do body 
+    const conteudo = await prisma.question.create({data: { title, content, userId: user_id }}) // requisição tratada
 
-    await prisma.question.create({
-      data: { title, content, userId: user_id }
-    })
-
-    return response.status(201).json()
+    return response.status(201).json(conteudo)
   }
 
   static async update(request: Request, response: Response) {
