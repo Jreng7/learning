@@ -22,8 +22,8 @@ export class QuestionsController {
 
   async create(request: Request, response: Response) {
 
-    const { title, content, user_id } = request.body // Recebi a requisição do body 
-    const conteudo = await prisma.question.create({data: { title, content, userId: user_id }}) // requisição tratada
+    const { title, content, userId } = request.body // Recebi a requisição do body 
+    const conteudo = await prisma.question.create({data: { title, content, userId }}) // requisição tratada
 
     return response.status(201).json(conteudo)
   }
@@ -35,7 +35,7 @@ export class QuestionsController {
 
     await prisma.question.update({ data: { title, content }, where: { id }})
 
-    return response.status(201).json({ message: "Questão atualizada com sucesso."})
+    return response.json()
   }
 
   async remove(request: Request, response: Response) {
