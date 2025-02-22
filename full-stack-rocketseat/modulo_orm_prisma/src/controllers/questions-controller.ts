@@ -1,9 +1,9 @@
 import { Request, Response } from "express"
 import { prisma } from "@/database/prisma"
 
-export default class QuestionsController {
+export class QuestionsController {
 
-  static async index(request: Request, response: Response) {
+  async index(request: Request, response: Response) {
 
     const questions = await prisma.question.findMany({
       where: {
@@ -20,7 +20,7 @@ export default class QuestionsController {
     
   }
 
-  static async create(request: Request, response: Response) {
+  async create(request: Request, response: Response) {
 
     const { title, content, user_id } = request.body // Recebi a requisição do body 
     const conteudo = await prisma.question.create({data: { title, content, userId: user_id }}) // requisição tratada
@@ -28,7 +28,7 @@ export default class QuestionsController {
     return response.status(201).json(conteudo)
   }
 
-  static async update(request: Request, response: Response) {
+  async update(request: Request, response: Response) {
 
     const { id } = request.params
     const { title, content } = request.body
@@ -38,7 +38,7 @@ export default class QuestionsController {
     return response.status(201).json({ message: "Questão atualizada com sucesso."})
   }
 
-  static async remove(request: Request, response: Response) {
+  async remove(request: Request, response: Response) {
     return response.json()
   }
 

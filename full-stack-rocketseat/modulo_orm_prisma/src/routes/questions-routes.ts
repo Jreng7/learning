@@ -1,7 +1,8 @@
 import { Router } from "express"
-import questionsController from "@/controllers/questions-controller"
+import { QuestionsController } from '@/controllers/questions-controller'
 
 export const questionsRoutes = Router()
+const questionsController = new QuestionsController()
 
 questionsRoutes.get("/", questionsController.index)
 questionsRoutes.post("/", questionsController.create)
