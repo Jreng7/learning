@@ -4,7 +4,10 @@ import { prisma } from "@/database/prisma"
 export default class QuestionsController {
 
   static async index(request: Request, response: Response) {
-    return response.json()
+
+    const questions = await prisma.question.findMany()
+    return response.json(questions)
+    
   }
 
   static async create(request: Request, response: Response) {
