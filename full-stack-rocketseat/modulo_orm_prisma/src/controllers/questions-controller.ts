@@ -22,7 +22,7 @@ export class QuestionsController {
 
   async create(request: Request, response: Response) {
 
-    const { title, content, userId } = request.body // Recebi a requisição do body 
+    const { title, content, userId } = request.body //Recebi a requisição do body
     const conteudo = await prisma.question.create({data: { title, content, userId }}) // requisição tratada
 
     return response.status(201).json(conteudo)
