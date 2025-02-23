@@ -33,8 +33,6 @@ export class QuestionsController {
     const { id } = request.params
     const { title, content } = request.body
 
-    console.log("ID recebido:", id);
-
     await prisma.question.update({ data: { title, content }, where: { id }})
 
     return response.json()
