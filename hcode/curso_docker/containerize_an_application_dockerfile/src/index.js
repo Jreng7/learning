@@ -10,5 +10,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log('Server listening on port 3333')
+  console.log('Server listening on port 3333 Dockerfile, but host is port 8080')
 })
