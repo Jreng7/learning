@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 
-class SessionsController {
+export class SessionsController {
   async create(request: Request, response: Response) {}
 }
 
-export { SessionsController }
+

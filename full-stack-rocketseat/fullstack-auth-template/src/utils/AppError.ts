@@ -1,4 +1,4 @@
-class AppError {
+export class AppError {
   message: string
   statusCode: number
 
@@ -8,4 +8,4 @@ class AppError {
   }
 }
 
-export { AppError }
+
