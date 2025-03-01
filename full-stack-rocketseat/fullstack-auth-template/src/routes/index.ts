@@ -1,11 +1,12 @@
 import { Router } from "express"
-
-import { sessionsRoutes } from "./sessions.routes"
+import { loginRoutes } from "./login.routes"
 import { productsRoutes } from "./products.routes"
+
 
 export const routes = Router()
 
-routes.use("/sessions", sessionsRoutes)
+
+routes.use("/login", loginRoutes)
 routes.use("/products", productsRoutes)
 
 
