@@ -1,13 +1,3 @@
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 model User {    // Aqui o "User" é uma representação
 
   id String @id @default(uuid())
@@ -16,10 +6,9 @@ model User {    // Aqui o "User" é uma representação
 
   questions Question[]
   
-  @@map("users")  // aqui é o nome da tabela que eu quero usar dentro do banco de dados.
+  @@map("user")  // aqui é o nome da tabela que eu quero usar dentro do banco de dados.
 
 }
-
 
 model Question {
   
