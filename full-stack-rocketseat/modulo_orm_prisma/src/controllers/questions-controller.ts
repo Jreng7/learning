@@ -39,7 +39,12 @@ export class QuestionsController {
   }
 
   async remove(request: Request, response: Response) {
-    return response.json()
+
+    const { id } = request.params
+
+    await prisma.question.delete({ where: { id } })
+
+    return response.status(204).json()
   }
 
 }
