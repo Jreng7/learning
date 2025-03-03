@@ -1,7 +1,7 @@
 import { AppError } from '@/utils/AppError'
 import { Request, Response, NextFunction } from 'express'
 import { verify } from 'jsonwebtoken'
-import auth from '@/configs/auth'
+import authConfig from '@/configs/auth'
 
 
 export function ensureAuthenticated(request: Request, response: Response, next: NextFunction){
@@ -13,6 +13,8 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
   }
 
   const [, token] = authHeader.split(' ')
+
+  verify(token, authConfig.jwt.secret)
 
   return next()
 }
