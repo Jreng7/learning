@@ -23,7 +23,7 @@ export class LoginController {
     const { secret, expiresIn } = auth.jwt
 
     const token = sign({}, secret, {
-      expiresIn,
+      expiresIn: undefined,
       subject: String(fakeUser.id),
     })
 

@@ -14,7 +14,7 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
 
   const [, token] = authHeader.split(' ')
 
-  verify(token, authConfig.jwt.secret)
+  const { sub } = verify(token, authConfig.jwt.secret)
 
   return next()
 }
