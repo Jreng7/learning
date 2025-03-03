@@ -1,5 +1,8 @@
 import { AppError } from '@/utils/AppError'
 import { Request, Response, NextFunction } from 'express'
+import { verify } from 'jsonwebtoken'
+import auth from '@/configs/auth'
+
 
 export function ensureAuthenticated(request: Request, response: Response, next: NextFunction){
 
