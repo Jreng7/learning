@@ -1,11 +1,11 @@
 
-const authConfig = {
+  const authConfig = {
 
-  jwt: {
-    secret: process.env.AUTH_SECRET || "default",
-    expiresIn: "1d",
-  },
+    jwt: {
+      secret: process.env.AUTH_SECRET,
+      expiresIn: "1d",
+    },
 
-}
+  }
 
-export { authConfig }
+  export default authConfig
