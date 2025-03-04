@@ -23,13 +23,14 @@ export class UsersController {
 
   // metodo get - Pegar usuário pelo Id
   static async getUserById(req: Request, res: Response){
-    let userId = req.params.id
-    const doc = await getFirestore().collection("users").doc(userId).get()
-    let user = {
-      id: doc.id,
-      ...doc.data()
-    }
+
+    let { id } = req.params
+
+    const doc = await getFirestore().collection("users").doc(id).get()
+
+    let user = { id: doc.id, ...doc.data() }
     res.send(user)
+
   }
 
 
