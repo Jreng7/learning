@@ -11,7 +11,7 @@ export class LoginController {
     const { username, password } = request.body
 
     const fakeUser = {
-      id: 1,
+      id: "1",
       username: 'miguel',
       password: '123457'
     }
