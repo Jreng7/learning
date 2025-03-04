@@ -4,7 +4,7 @@
   "description": "Uma simples api lista de contatos",
   "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node tsx watch src/*"
   },
   "author": "Josué Ribeiro",
   "license": "ISC",
