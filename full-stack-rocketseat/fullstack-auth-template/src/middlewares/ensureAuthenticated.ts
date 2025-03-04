@@ -17,7 +17,7 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
   const { sub: userId } = verify(token, authConfig.jwt.secret)
 
   request.user = {
-    id: userId,
+    id: String(userId),
   }
 
   return next()
