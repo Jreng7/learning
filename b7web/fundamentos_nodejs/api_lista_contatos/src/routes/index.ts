@@ -10,5 +10,7 @@ router.post('/contato', (request: Request, response: Response) => {
       return response.json({ error: 'O nome precisa ter pelo menos 2 caracteres.'})
     }
 
+    let list: string[] = []
+
     return response.status(201).json({name})
 })
