@@ -5,3 +5,13 @@ const schema = z.object({
   email: z.string().email(),
   age: z.number().min(18).max(120) // .min() do z.number() é diferente do .min() "string()" ele checa idade min e max.
 })
+
+
+let data = {
+  name: "John Doe",
+  email: "johndoe@gmail.com",
+  age: 35
+}
+
+const resultado = schema.parse(data)
+console.log(resultado)  
