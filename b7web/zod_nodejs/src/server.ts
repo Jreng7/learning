@@ -7,14 +7,10 @@ const schema = z.object({
 })
 
 
-type User = {
-  name: String;
-  email: String;
-  age: Number;
-}
+type User = z.infer<typeof schema>
 
 
-let data = {
+let data: User = {
   name: "John Doe",
   email: "johndoe@gmail.com",
   age: 35
