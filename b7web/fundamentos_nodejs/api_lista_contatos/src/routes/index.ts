@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express'
 import { readFile, writeFile } from 'fs/promises'
 
+
 export const router = Router()
 
 
@@ -29,3 +30,19 @@ router.post('/contato', async (request: Request, response: Response) => {
 
     return response.status(201).json({name})
 })
+
+router.get('/contatos', async (request: Request, response: Response) => {
+
+  let list: string[] = []
+  
+  try {
+
+    const data = await readFile(dataSource, {encoding: 'utf8'})
+    list = data.split('\n')
+
+  } catch (error) {}
+  
+  return response.json({ contatos: list })
+  
+})
+
