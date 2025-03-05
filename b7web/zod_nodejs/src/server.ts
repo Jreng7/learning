@@ -7,6 +7,13 @@ const schema = z.object({
 })
 
 
+type User = {
+  name: String;
+  email: String;
+  age: Number;
+}
+
+
 let data = {
   name: "John Doe",
   email: "johndoe@gmail.com",
