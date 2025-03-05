@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express'
 
-const router = Router()
+export const router = Router()
 
 router.post('/contato', (request: Request, response: Response) => {
 
@@ -12,6 +12,3 @@ router.post('/contato', (request: Request, response: Response) => {
 
     return response.status(201).json({ contato: name })
 })
-
-
-export default router 
