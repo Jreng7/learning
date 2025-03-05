@@ -25,7 +25,7 @@ router.post('/contato', async (request: Request, response: Response) => {
     } catch (error) {}
 
     list.push(name)
-    await writeFile
+    await writeFile(dataSource, list.join('\n'))
 
     return response.status(201).json({name})
 })
