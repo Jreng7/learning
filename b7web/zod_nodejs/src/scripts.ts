@@ -6,7 +6,8 @@ const patternValues = z.object({
   age: z.number(),
   active: z.boolean(),
   birthDate: z.date(),
-  qualquer: z.any()
+  qualquer: z.any(),
+  email: z.string().email().optional() 
 })
 
 const result = patternValues.parse({
