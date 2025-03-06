@@ -24,5 +24,3 @@ const result = patternValues.parse({
   email: 'visacard@gmail.com',
   salario: 1525
 })
-
-console.log(result)
