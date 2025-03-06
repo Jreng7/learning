@@ -7,7 +7,8 @@ const patternValues = z.object({
   active: z.boolean(),
   birthDate: z.date(),
   qualquer: z.any(),
-  email: z.string().email().optional() 
+  email: z.string().email().optional(),
+  salario: z.literal(1525) // Literal é quando o valor dentro DEVE ser igual ao que será passado no "parse"
 })
 
 const result = patternValues.parse({
