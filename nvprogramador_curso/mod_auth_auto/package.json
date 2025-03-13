@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --build",
-    "dev": "ts-node-dev --transpile-only=false --ignore \"node_modules\" server.ts",
+    "dev": "ts-node-dev --transpile-only=false server.ts",
     "start": "node dist/server.ts"
   },
   "devDependencies": {
