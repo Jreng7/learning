@@ -1,15 +1,10 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import AuthController from '../controllers/Auth.Controller';
 
 const routes = Router()
 
-routes.post('/auth', (request: Request, response: Response) => {
-  return response.status(201).json({ message: "Rota ok"})
-})
-
-
-routes.post('/auth/refreshtoken', (request: Request, response: Response) => {
-  return response.status(201).json({ message: "Rota ok"})
-})
+routes.post('/auth', AuthController.execute)
+routes.post('/auth/refreshtoken', AuthController.refreshtoken)
 
 
 export { routes }
