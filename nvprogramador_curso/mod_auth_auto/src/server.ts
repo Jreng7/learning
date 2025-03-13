@@ -4,8 +4,8 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet'; 
 
-const app = express();
+const server = express();
 
-app.use(cors());
-app.use(helmet());
-app.use(express.json())
+server.use(cors());
+server.use(helmet());
+server.use(express.json())
