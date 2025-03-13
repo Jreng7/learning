@@ -6,6 +6,7 @@
     "rootDir": "./src",          // Pasta de entrada dos arquivos .ts (ajuste conforme seu projeto)
     "strict": true,              // Habilita verificação rigorosa de tipos
     "esModuleInterop": true,     // Compatibilidade com módulos ES6
+    "moduleResolution": "node",
     "skipLibCheck": true         // Ignora verificação de tipos em bibliotecas externas
   },
   "include": ["src/**/*.ts"],    // Quais arquivos compilar

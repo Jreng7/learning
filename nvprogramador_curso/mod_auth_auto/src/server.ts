@@ -1,11 +1,9 @@
-import dotenv from 'dotenv'; 
-dotenv.config();
-import express from 'express';
-import cors from 'cors';
-import helmet from 'helmet'; 
+import server from "./app";
+import { config } from 'dotenv'
+config()
 
-const server = express();
+const port = process.env.PORT
 
-server.use(cors());
-server.use(helmet());
-server.use(express.json())
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:{port}`)
+})
