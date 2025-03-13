@@ -22,10 +22,7 @@ export class LoginController {
 
     const { secret, expiresIn } = auth.jwt
 
-    const token = sign({}, secret, {
-      expiresIn: undefined,
-      subject: String(fakeUser.id),
-    })
+    const token = sign({}, secret, {expiresIn: undefined, subject: String(fakeUser.id)})
 
     return response.json({ message: token })
   }
