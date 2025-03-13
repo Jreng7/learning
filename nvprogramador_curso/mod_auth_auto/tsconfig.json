@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",          // Versão do JavaScript gerada
+    "module": "CommonJS",        // Sistema de módulos (Node.js usa CommonJS)
+    "outDir": "./dist",          // Pasta de saída dos arquivos .js
+    "rootDir": "./src",          // Pasta de entrada dos arquivos .ts (ajuste conforme seu projeto)
+    "strict": true,              // Habilita verificação rigorosa de tipos
+    "esModuleInterop": true,     // Compatibilidade com módulos ES6
+    "skipLibCheck": true         // Ignora verificação de tipos em bibliotecas externas
+  },
+  "include": ["src/**/*.ts"],    // Quais arquivos compilar
+  "exclude": ["node_modules"]    // O que ignorar
+}
